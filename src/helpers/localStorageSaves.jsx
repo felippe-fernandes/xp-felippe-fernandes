@@ -18,7 +18,7 @@ if (!getDate) {
 }
 
 export const saveDate = (day, hour) => {
-  localStorage.setItem('user', JSON.stringify({ day, hour }));
+  localStorage.setItem('date', JSON.stringify({ day, hour }));
 };
 //
 
