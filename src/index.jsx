@@ -1,19 +1,19 @@
-/* eslint-disable no-undef */
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import RecipesProvider from './context/LoginProvider';
+const container = document.getElementById('root');
 
-ReactDOM.render(
-  <BrowserRouter>
+const root = createRoot(container);
+root.render(
+<BrowserRouter>
     <RecipesProvider>
       <App />
     </RecipesProvider>
   </BrowserRouter>,
-  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change
