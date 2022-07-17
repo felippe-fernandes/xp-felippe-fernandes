@@ -1,4 +1,40 @@
 @media ( max-width : 480px ) {
+    .LoginPage {
+        align-items: center;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+    }
 
-  
+    .LoginBodyDiv {
+        align-items: center;
+        border: 2px solid #fffffe;
+        border-radius: 1em;
+        display: flex;
+        height: 40vh;
+        justify-content: center;
+        width: 90vw;
+    }
+
+    .LoginInputs {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .LoginInputs div{
+        align-items: center;
+        border-radius: 1em 0 0 1em;
+        display: flex;
+        height: 5em;
+        justify-content: center;
+    }
+
+    .LoginInputs input {
+        background-color: #fffffe;
+        border-radius: 0.8em;
+        height: 3em;
+        padding-left: 1em;
+        width: 20em;
+    }
+
 }
