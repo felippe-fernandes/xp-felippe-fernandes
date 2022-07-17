@@ -9,8 +9,8 @@
 
     .Logo  {
         align-items: center;
-        background-color:#7f5af0;
-        border-radius: 2em;
+        background: linear-gradient(-90deg, rgb(66, 30, 173) 0%, rgba(127,90,240,1) 100%);
+        border-radius: 1em;
         display: flex;
         justify-content: center;
     }
@@ -51,6 +51,14 @@
         padding-left: 1em;
         width: 20em;
     }
+
+    .LoginInputs input::placeholder {
+        color: #7f5af0;
+    }
+
+    .LoginInputs input:focus {
+        outline: none;
+    }
     
     .LoginButton {
         align-items: center;
@@ -72,6 +80,10 @@
     .LoginButton svg {
         font-size: 20px;
         margin-left: 1em;
+    }
+
+    .LoginButton:disabled {
+        background-color: dimgray;
     }
 
 }

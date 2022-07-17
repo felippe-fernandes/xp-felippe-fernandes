@@ -7,26 +7,29 @@ import { day, hour } from '../../helpers/dateFunctions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../images/xp-inc-new.webp'
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+  let navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [disabled, setDisabled] = useState(true);
 
   const handleClick = () => {
-    saveEmail(email, Date);
+    console.log(email);
+    saveEmail(email);
     saveDate(day, hour)
+    navigate("/wallet");
   };
 
   useEffect(() => {
     const checkDisbale = () => {
-      validateEmail(email)
-      if (validateEmail || password.length >= 6) {
+      if (validateEmail(email) && password.length >= 6) {
         setDisabled(false);
       } else { setDisabled(true); }
     };
     checkDisbale();
-  }, [email, password]);
+  }, [email, password.length]);
 
   return (
     <div className={styles.LoginPage}>
@@ -42,7 +45,6 @@ function Login() {
               type="email"
               placeholder="E-mail"
               aria-label="Email"
-              aria-describedby="basic-addon1"
             />
           </InputGroup>
           <InputGroup className={styles.mb3}>
@@ -52,11 +54,10 @@ function Login() {
               type="password"
               placeholder="Senha"
               aria-label="password"
-              aria-describedby="basic-addon1"
             />
           </InputGroup>
         </div>
-        <button className={styles.LoginButton}>
+        <button className={styles.LoginButton} onClick={handleClick} disabled={disabled}>
           <p>Acessar</p>
           <FontAwesomeIcon icon={faArrowRightToBracket} />
         </button>
