@@ -6,15 +6,17 @@ function StockTable() {
 
     const createTableRows = () => {
         return shares.map((share) => (
-            <tr key={share.name}>
-                <td>{share.name}</td>
-                <td>{share.qty}</td>
-                <td>{Number(share.price).toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})}</td>
-                <td>
-                    <button>comprar</button>
-                    <button>vender</button>
-                </td>
-            </tr>
+            <tbody key={share.name}>
+                <tr>
+                    <td>{share.name}</td>
+                    <td>{share.qty}</td>
+                    <td>{Number(share.price).toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})}</td>
+                    <td>
+                        <button>comprar</button>
+                        <button>vender</button>
+                    </td>
+                </tr>
+            </tbody>
         ));
     };
         return (
