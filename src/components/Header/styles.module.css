@@ -1,0 +1,26 @@
+.HeaderComponent {
+    align-items: center;
+    display: flex;
+    height: 5em;
+    justify-content: flex-end;
+}
+
+.User {
+    align-items: center;
+    background-color: #7f5af0;
+    border: 1px solid #fffffe;
+    border-radius: 0.5em;
+    display: flex;
+    height: 2.3em;
+    justify-content: center;
+    margin-right: 1em;
+}
+
+p {
+    color: #fffffe;
+    padding: 0.4em;
+}
+
+p svg{
+    margin-right: 0.3em;
+}
