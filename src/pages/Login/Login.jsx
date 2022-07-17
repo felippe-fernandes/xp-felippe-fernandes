@@ -31,7 +31,7 @@ function Login() {
     <div className={styles.LoginPage}>
       <div className={styles.LoginBodyDiv}>
         <div className={styles.LoginInputs}>
-          <InputGroup className="mb-3">
+          <InputGroup className={styles.mb3}>
             <FormControl
               value={email}
               onChange={({ target }) => setEmail(target.value)}
@@ -41,7 +41,7 @@ function Login() {
               aria-describedby="basic-addon1"
             />
           </InputGroup>
-          <InputGroup className="mb-3">
+          <InputGroup className={styles.mb3}>
             <FormControl
               value={password}
               onChange={({ target }) => setPassword(target.value)}
@@ -51,8 +51,8 @@ function Login() {
               aria-describedby="basic-addon1"
             />
           </InputGroup>
-          <button>Acessar</button>
         </div>
+          <button className={styles.LoginButton}>Acessar</button>
       </div>
     </div>
   );

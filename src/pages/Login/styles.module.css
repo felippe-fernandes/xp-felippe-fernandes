@@ -11,6 +11,7 @@
         border: 2px solid #fffffe;
         border-radius: 1em;
         display: flex;
+        flex-direction: column;
         height: 40vh;
         justify-content: center;
         width: 90vw;
@@ -35,6 +36,15 @@
         height: 3em;
         padding-left: 1em;
         width: 20em;
+    }
+    
+    .LoginButton {
+        background-color: #7f5af0;
+        border-radius: 0.8em;
+        color: #fffffe;
+        height: 3em;
+        margin-top: 2em;
+        width: 21em;
     }
 
 }
