@@ -20,13 +20,13 @@ function StockTable() {
         ));
     };
         return (
-            <table className="table">
+            <table className={styles.Table}>
                 <thead>
-                    <tr className="table_header_row">
-                        <th className="table_header_data">Ação</th>
-                        <th className="table_header_data">Qtde</th>
-                        <th className="table_header_data">Valor (R$)</th>
-                        <th className="table_header_data">Negociar</th>                        
+                    <tr className={styles.TableHeaderRow}>
+                        <th className={styles.TableHeaderData}>Ação</th>
+                        <th className={styles.TableHeaderData}>Qtde</th>
+                        <th className={styles.TableHeaderData}>Valor (R$)</th>
+                        <th className={styles.TableHeaderData}>Negociar</th>                        
                     </tr>
                 </thead>
                 {createTableRows()}
