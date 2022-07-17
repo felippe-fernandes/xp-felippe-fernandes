@@ -5,7 +5,7 @@ import { validateEmail } from '../../helpers/LoginFunctions.jsx';
 import styles from './styles.module.css';
 import { day, hour } from '../../helpers/dateFunctions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowr } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -52,7 +52,7 @@ function Login() {
             />
           </InputGroup>
         </div>
-          <button className={styles.LoginButton}>Acessar</button>
+          <button className={styles.LoginButton}>Acessar </button>
       </div>
     </div>
   );
