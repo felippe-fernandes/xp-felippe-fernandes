@@ -16,7 +16,6 @@ function Login() {
   const [disabled, setDisabled] = useState(true);
 
   const handleClick = () => {
-    console.log(email);
     saveEmail(email);
     saveDate(day, hour)
     navigate("/wallet");
