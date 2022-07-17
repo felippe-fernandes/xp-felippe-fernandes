@@ -6,6 +6,7 @@ import styles from './styles.module.css';
 import { day, hour } from '../../helpers/dateFunctions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../images/xp-inc-new.webp'
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -29,6 +30,9 @@ function Login() {
 
   return (
     <div className={styles.LoginPage}>
+      <div className={styles.Logo}>
+        <img src={logo} alt="XP Inc Logo" />
+      </div>
       <div className={styles.LoginBodyDiv}>
         <div className={styles.LoginInputs}>
           <InputGroup className={styles.mb3}>
@@ -52,7 +56,10 @@ function Login() {
             />
           </InputGroup>
         </div>
-          <button className={styles.LoginButton}>Acessar </button>
+        <button className={styles.LoginButton}>
+          <p>Acessar</p>
+          <FontAwesomeIcon icon={faArrowRightToBracket} />
+        </button>
       </div>
     </div>
   );
