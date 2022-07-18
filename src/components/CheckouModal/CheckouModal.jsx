@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Context from '../../context/Context';
 import CheckoutTable from '../CheckoutTable/CheckoutTable';
 import styles from './styles.module.css';
@@ -8,10 +8,25 @@ import { Form, InputGroup } from 'react-bootstrap';
 
 function CheckouModal() {
     const { setShowModal } = useContext(Context)
-
+    const [confirmationScreen, setConfirmationScreen] = useState(false);
+    const [confirmButtonDisable, setConfirmButtonDisable] = useState(false);
+    const [buyValue, setBuyValue] = useState(0);
+    const [sellValue, setSellValue] = useState(0);
+    
     const handleBackClick = () => {
         setShowModal(false)
     }
+
+    const handleConfirmClick = () => {
+        setConfirmButtonDisable(true)
+    }
+
+    useEffect(() => {
+        const enableConfirmButton = () => {
+          console.log(sellValue, buyValue);
+        };
+        enableConfirmButton();
+      }, []);
 
 
     return (
@@ -24,21 +39,25 @@ function CheckouModal() {
                 <InputGroup className={styles.Inputs}>
                     <InputGroup.Text id={styles.BuyButton}>Comprar</InputGroup.Text>
                     <Form.Control
+                        onChange={({ target }) => setBuyValue(target.value)}
                         placeholder="Informe o valor"
                         aria-label="Buy Input"
+                        type='number'
                     />
                 </InputGroup>
                 <InputGroup className={styles.Inputs}>
                     <InputGroup.Text id={styles.SellButton}>Vender</InputGroup.Text>
                     <Form.Control
+                        onChange={({ target }) => setSellValue(target.value)}
                         placeholder="Informe o valor"
                         aria-label="Sell Input"
+                        type='number'
                     />
                 </InputGroup>
             </div>
             <div className={styles.CheckoutButtons}>
                 <button onClick={handleBackClick}><FontAwesomeIcon icon={faRotateLeft} />Voltar</button>
-                <button>Confirmar<FontAwesomeIcon icon={faCheck} /></button>
+                <button onClick={handleConfirmClick}>Confirmar<FontAwesomeIcon icon={faCheck} /></button>
             </div>
         </div>
     );
