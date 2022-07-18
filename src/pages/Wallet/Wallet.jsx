@@ -12,7 +12,7 @@ function Wallet() {
   const { showModal, setShowModal } = useContext(Context)
 
   const handleClick = () => {
-    setShowModal(true);
+    console.log('ok');
   }
 
   const handleModalClose = () => {

@@ -20,21 +20,20 @@
         background-color: #7f5af0;
         border: 0;
         border-radius: 0.8em;
-        bottom: 2em;
+        bottom: 5vh;
         color: #fffffe;
         display: flex;
-        height: 3em;
+        height: 3.5em;
         justify-content: center;
-        margin-top: 2em;
         position: fixed;
-        width: 21em;
+        width: 25em;
     }
 
     .TransferButton p {
-        font-size: 18px;
+        font-size: 26px;
     }
 
     .TransferButton svg {
-        font-size: 20px;
+        font-size: 26px;
     }
 }

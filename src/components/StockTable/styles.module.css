@@ -2,35 +2,34 @@
   .Table {
     border-collapse: collapse;
     border-spacing: 0;
-    padding: 8px;
     text-align: center;
     width: 100vw;
   }
 
   .Table thead {
     background-color: #72757e;
-    width: 100vw;
+    width: 100%;
   }
 
   .Table thead tr {
     align-items: center;
-    box-sizing: border-box;
+    background-color: #72757e;
     display: flex;
-    height: 2em;
     justify-content: flex-start;
-    width: 100vw;
+    width: 100%;
   }
 
   .Table thead th {
     font-size: 20px;
-    padding: 0 0 0 0.5em;
+    padding-left: 0.5em;
+    width: 100%;
   }
   
   .Table .TableSubHeaderRow {
     box-sizing: border-box;
     display: flex;
     justify-content: space-evenly;
-    width: 100vw;
+    width: 100%;
   }
 
   .Table .TableSubHeaderData {
@@ -47,10 +46,11 @@
     display: flex;
     justify-content: space-evenly;
     padding: 0.1em;
+    width: 100%;
   }
 
   #NameColumn {
-    background-color: #ffc000
+    background-color: #ffc000;
   }
 
   #QtyColumn {
@@ -97,15 +97,11 @@
     font-size: 18px;
     justify-content: space-evenly;
     margin: 0;
-    overflow: hidden;
-    text-align: center;
-    vertical-align: middle;
-    word-break: normal;
-    width: 5em;
+    width: 4.5em;
   }
   
   .Table td button {
-    border: 0px solid #fffffe;
+    border: 0;
     border-radius: 100%;
     color: #fffffe;
     height: 25px;
