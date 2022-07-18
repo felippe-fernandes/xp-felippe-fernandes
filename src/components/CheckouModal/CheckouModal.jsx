@@ -22,14 +22,14 @@ function CheckouModal() {
             </div>
             <div className={styles.QtyInputs}>
                 <InputGroup className={styles.Inputs}>
-                    <InputGroup.Text id="BuyButton">Comprar</InputGroup.Text>
+                    <InputGroup.Text id={styles.BuyButton}>Comprar</InputGroup.Text>
                     <Form.Control
                         placeholder="Informe o valor"
                         aria-label="Buy Input"
                     />
                 </InputGroup>
                 <InputGroup className={styles.Inputs}>
-                    <InputGroup.Text id="SellButton">Vender</InputGroup.Text>
+                    <InputGroup.Text id={styles.SellButton}>Vender</InputGroup.Text>
                     <Form.Control
                         placeholder="Informe o valor"
                         aria-label="Sell Input"

@@ -18,19 +18,37 @@
 
     .QtyInputs {
         align-items: center;
-        background-color: green;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        font-size: 24px;
+        justify-content: space-around;
+        height: 10em;
+    }
+
+    .QtyInputs div {
+        display: flex;
     }
 
     .QtyInputs span {
         background-color: yellow;
-        width: 10em;
+        text-align: center;
+        width: 5em;
+    }
+
+    .QtyInputs #BuyButton {
+        background-color: #2e75b6;
+    }
+
+    .QtyInputs #SellButton {
+        background-color: #6eeb83;
     }
 
     .QtyInputs input {
-        width: 10em;
+        width: 12em;
+    }
+
+    .QtyInputs input::placeholder {
+        padding-left: 0.8em;
     }
 
     .CheckoutButtons {
