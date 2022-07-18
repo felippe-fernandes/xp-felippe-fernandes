@@ -23,10 +23,14 @@ function CheckouModal() {
 
     useEffect(() => {
         const enableConfirmButton = () => {
-          console.log(sellValue, buyValue);
+            if (sellValue || buyValue <= 0) {
+                setConfirmButtonDisable(true)
+            } else {
+                setConfirmButtonDisable (false)
+            }
         };
         enableConfirmButton();
-      }, []);
+      }, [buyValue, sellValue]);
 
 
     return (
@@ -57,7 +61,7 @@ function CheckouModal() {
             </div>
             <div className={styles.CheckoutButtons}>
                 <button onClick={handleBackClick}><FontAwesomeIcon icon={faRotateLeft} />Voltar</button>
-                <button onClick={handleConfirmClick}>Confirmar<FontAwesomeIcon icon={faCheck} /></button>
+                <button onClick={handleConfirmClick} disabled={confirmButtonDisable}>Confirmar<FontAwesomeIcon icon={faCheck} /></button>
             </div>
         </div>
     );

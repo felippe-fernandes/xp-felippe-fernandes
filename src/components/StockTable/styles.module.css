@@ -20,6 +20,7 @@
   }
 
   .Table thead th {
+    text-align: start;
     font-size: 20px;
     padding-left: 0.5em;
     width: 100%;

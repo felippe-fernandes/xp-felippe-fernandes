@@ -70,4 +70,8 @@
         justify-content: space-evenly;
         width: 8em;
     }
+
+    .CheckoutButtons button:disabled {
+        background-color: dimgray;
+    }
 }
