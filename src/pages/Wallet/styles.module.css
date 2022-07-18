@@ -1,3 +1,31 @@
 @media ( max-width : 480px ) {
-    
+    .WalletPage {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .TransferButton {
+        align-items: center;
+        align-self: center;
+        background-color: #7f5af0;
+        border: 0;
+        border-radius: 0.8em;
+        bottom: 2em;
+        color: #fffffe;
+        display: flex;
+        height: 3em;
+        justify-content: center;
+        margin-top: 2em;
+        position: fixed;
+        width: 21em;
+    }
+
+    .TransferButton p {
+        font-size: 18px;
+    }
+
+    .TransferButton svg {
+        font-size: 20px;
+    }
 }

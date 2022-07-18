@@ -49,8 +49,10 @@ function StockTable() {
                     <th className={styles.TableSubHeaderData}>Negociar</th>
                 </tr>
                 {myShareTable()}
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
             </tbody>
-            <br />
             <thead>
                 <tr colSpan={3} className={styles.MergedHeaderRow}>
                     <th className={styles.MergedHeaderData}>Disponíveis para Investir:</th>
