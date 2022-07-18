@@ -5,6 +5,8 @@ import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faRotateLeft } from '@fortawesome/free-solid-svg-icons';
 import { Form, InputGroup } from 'react-bootstrap';
+import Lottie from "lottie-react";
+import SuccessAnimation from '../../Lottie/success.json'
 
 function CheckouModal() {
     const { setShowModal } = useContext(Context)
@@ -12,13 +14,13 @@ function CheckouModal() {
     const [confirmButtonDisable, setConfirmButtonDisable] = useState(false);
     const [buyValue, setBuyValue] = useState(0);
     const [sellValue, setSellValue] = useState(0);
-    
+
     const handleBackClick = () => {
         setShowModal(false)
     }
 
     const handleConfirmClick = () => {
-        setConfirmButtonDisable(true)
+        setConfirmationScreen(true)
     }
 
     useEffect(() => {
@@ -26,15 +28,14 @@ function CheckouModal() {
             if (sellValue || buyValue <= 0) {
                 setConfirmButtonDisable(true)
             } else {
-                setConfirmButtonDisable (false)
+                setConfirmButtonDisable(false)
             }
         };
         enableConfirmButton();
-      }, [buyValue, sellValue]);
+    }, [buyValue, sellValue]);
 
-
-    return (
-        <div className={styles.CheckouModalComponent}>
+    const tableScreen =
+        (<div className={styles.CheckouModalComponent}>
             <div className={styles.FirstDiv}>
                 <h1>Comprar/Vender Ação</h1>
                 <CheckoutTable />
@@ -63,7 +64,16 @@ function CheckouModal() {
                 <button onClick={handleBackClick}><FontAwesomeIcon icon={faRotateLeft} />Voltar</button>
                 <button onClick={handleConfirmClick} disabled={confirmButtonDisable}>Confirmar<FontAwesomeIcon icon={faCheck} /></button>
             </div>
-        </div>
+        </div>)
+
+    const successScreen =
+        (<div className={styles.ConfirmationScreenModal}>
+            <h1>Processo realizado com sucesso!</h1>
+            <Lottie animationData={SuccessAnimation} className={styles.Animation}/>
+        </div>)
+
+    return (
+        <>{confirmationScreen ? successScreen : tableScreen}</>
     );
 }
 
