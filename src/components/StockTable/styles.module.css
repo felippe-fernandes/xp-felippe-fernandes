@@ -1,75 +1,66 @@
 @media ( max-width : 480px ){
   .Table {
-    border: 0px solid #31393e;
     border-collapse: collapse;
     border-spacing: 0;
     padding: 8px;
     text-align: center;
     width: 100vw;
   }
-  
-  .Table .TableHeaderRow {
-    background-color: #31393e;
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+
+  .Table thead {
+    background-color: #72757e;
     width: 100vw;
   }
-  
-  .Table td {
-    border: 0px solid #31393e;
+
+  .Table thead tr {
+    align-items: center;
     display: flex;
-    font-family: Arial, sans-serif;
+    height: 2em;
+    justify-content: flex-start;
+    width: 100vw;
+  }
+
+  .Table thead th {
     font-size: 20px;
+    padding: 0 0 0 0.5em;
+  }
+  
+  .Table .TableSubHeaderRow {
+    box-sizing: border-box;
+    display: flex;
     justify-content: space-evenly;
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
-    text-align: center;
-    width: 100%;
-    word-break: normal;
+    width: 100vw;
   }
-  
-  .Table th {
-    background: #31393e;
-    border: 0px solid #31393e;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    overflow: hidden;
-    padding: 10px 5px;
-    text-align: center;
-    word-break: normal;
-    width: 100%;
+
+  .Table .TableSubHeaderData {
+    background-color: #fffffe;
+    border-radius: 0.6em;
+    font-size: 18px;
+    font-weight: 4500;
+    margin: 0.5em 0 0.5em 0;
+    padding: 0.2em;
+    width: 5em;
   }
-  
-  .Table .TableHeaderData {
-    background-color: #31393e;
-    border-color: #31393e;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 500;
-    text-align: center;
-    vertical-align: top;
-  }
-  
+
   .Table tr{
     display: flex;
-    justify-content: space-around;
-    padding: 10px 5px;
-    text-align: center;
-    width: 100vw;
+    justify-content: space-evenly;
+    padding: 0.1em;
   }
-  
-  .Table td button {
-    border: 1px solid #fffffe;
-    border-radius: 100%;
-    color: #fffffe;
-    height: 25px;
-    text-align: center;
-    width: 25px;
+
+  #NameColumn {
+    background-color: #ffc000
+  }
+
+  #QtyColumn {
+    background-color: #595959;
+    color: white;
+  }
+
+  #PriceColumn {
+    background-color: black;
+    color: white;
+    width: 6em;
   }
 
   #ButtonsColumn {
@@ -91,4 +82,33 @@
     justify-content: center;
   }
 
+  #SellButton:disabled {
+    align-items: center;
+    background-color: #72757e;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Table tbody td {
+    align-items: center;
+    border-radius: 0.4em;
+    display: flex;
+    font-size: 18px;
+    justify-content: space-evenly;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    word-break: normal;
+    width: 5em;
+  }
+  
+  .Table td button {
+    border: 1px solid #fffffe;
+    border-radius: 100%;
+    color: #fffffe;
+    height: 25px;
+    text-align: center;
+    width: 25px;
+  }
 }
