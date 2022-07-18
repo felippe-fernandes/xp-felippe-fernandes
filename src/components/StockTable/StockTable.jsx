@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './styles.module.css';
 import { shares } from '../../helpers/tableInfos';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faC, faV } from '@fortawesome/free-solid-svg-icons';
+import Context from '../../context/Context';
 
 function StockTable() {
+    const { setShareSelected, setShowModal } = useContext(Context)
+
+    const handleClick = (share) => {
+        setShowModal(true)
+        setShareSelected(share)
+    }
 
     const myShareTable = () => {
         return shares.filter((share) => share.itHas).map((share) => (
@@ -13,8 +20,8 @@ function StockTable() {
                 <td id={styles.QtyColumn}>{share.qty}</td>
                 <td id={styles.PriceColumn}>{Number(share.price).toFixed(2).replace('.', ',')}</td>
                 <td id={styles.ButtonsColumn}>
-                    <button id={styles.BuyButton}><FontAwesomeIcon icon={faC} /></button>
-                    <button id={styles.SellButton}><FontAwesomeIcon icon={faV} /></button>
+                    <button id={styles.BuyButton} onClick={() => handleClick(share)}><FontAwesomeIcon icon={faC} /></button>
+                    <button id={styles.SellButton} onClick={() => handleClick(share)}><FontAwesomeIcon icon={faV} /></button>
                 </td>
             </tr>
         ));

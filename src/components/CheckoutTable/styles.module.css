@@ -1,0 +1,67 @@
+@media ( max-width : 480px ){
+    .CheckoutTableComponent {
+        width: 100%;
+    }
+    
+    .Table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: flex;
+        text-align: center;
+        width: 100%;
+    }
+
+    .Table tbody {
+        width: 100%;
+    }
+    
+    .Table .TableSubHeaderRow {
+        background-color: #fffffe;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 1em;
+        width: 100%;
+    }
+  
+    .Table .TableSubHeaderData {
+        background-color: #fffffe;
+        border-radius: 0.4em;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0.5em 0 0.5em 0;
+        width: 7em;
+    }
+  
+    .Table tr{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .Table tbody td {
+        border-radius: 0.4em;
+        font-size: 18px;
+        margin: 0;
+        overflow: hidden;
+        text-align: center;
+        vertical-align: middle;
+        word-break: normal;
+    }
+  
+    #NameColumn {
+        background-color: #ffc000;
+        width: 6em;
+    }
+  
+    #QtyColumn {
+        background-color: #595959;
+        color: white;
+        width: 6em;
+    }
+  
+    #PriceColumn {
+        background-color: black;
+        color: white;
+        width: 6em;
+    }
+}
