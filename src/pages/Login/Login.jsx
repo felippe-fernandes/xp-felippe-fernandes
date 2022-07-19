@@ -15,7 +15,8 @@ function Login() {
   const [password, setPassword] = useState('');
   const [disabled, setDisabled] = useState(true);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault()
     saveEmail(email);
     saveDate(day, hour)
     navigate("/wallet");
@@ -56,7 +57,7 @@ function Login() {
             />
           </InputGroup>
         </div>
-        <button className={styles.LoginButton} onClick={handleClick} disabled={disabled}>
+        <button className={styles.LoginButton} onClick={(e) => handleClick(e)} disabled={disabled} type='submit'>
           <p>Acessar</p>
           <FontAwesomeIcon icon={faArrowRightToBracket} />
         </button>
