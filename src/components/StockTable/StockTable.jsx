@@ -34,8 +34,8 @@ function StockTable() {
                 <td id={styles.QtyColumn}>{share.qty}</td>
                 <td id={styles.PriceColumn}>{Number(share.price).toFixed(2).replace('.', ',')}</td>
                 <td id={styles.ButtonsColumn}>
-                    <button id={styles.BuyButton}><FontAwesomeIcon icon={faC} /></button>
-                    <button id={styles.SellButton} disabled={!share.itHas}><FontAwesomeIcon icon={faV} /></button>
+                    <button id={styles.BuyButton} onClick={() => handleClick(share)}><FontAwesomeIcon icon={faC} /></button>
+                    <button id={styles.SellButton} onClick={() => handleClick(share)} disabled={!share.itHas}><FontAwesomeIcon icon={faV} /></button>
                 </td>
             </tr>
         ));
