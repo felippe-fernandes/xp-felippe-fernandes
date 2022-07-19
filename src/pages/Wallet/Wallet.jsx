@@ -7,12 +7,14 @@ import { faMoneyBillTransfer } from '@fortawesome/free-solid-svg-icons';
 import ReactModal from 'react-modal';
 import Context from '../../context/Context';
 import CheckouModal from '../../components/CheckouModal/CheckouModal';
+import { useNavigate } from 'react-router-dom';
 
 function Wallet() {
   const { showModal, setShowModal } = useContext(Context)
+  let navigate = useNavigate();
 
   const handleClick = () => {
-    console.log('ok');
+    navigate("/payment");
   }
 
   const handleModalClose = () => {
