@@ -1,0 +1,25 @@
+@media ( max-width : 480px ) {
+
+    .TransactionFormsComponent {
+        background-color: green;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .Buttons {
+        align-items: center;
+        background-color: yellow;
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .Input {
+        align-self: center;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+    }
+}
