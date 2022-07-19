@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styles from './styles.module.css';
-import { shares } from '../../helpers/tableInfos';
+import { shares } from '../../helpers/Infos';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faC, faV } from '@fortawesome/free-solid-svg-icons';
 import Context from '../../context/Context';
