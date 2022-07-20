@@ -63,14 +63,14 @@
         bottom: 5vh;
         color: #fffffe;
         display: flex;
-        height: 3.5em;
+        height: 4em;
         justify-content: center;
         position: fixed;
-        width: 30em;
+        width: 40em;
     }
 
     .TransferButton p {
-        font-size: 26px;
+        font-size: 40px;
     }
 
     .TransferButton svg {
