@@ -3,25 +3,28 @@ import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAstronaut, faMoneyBillWave, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { userInfos } from '../../helpers/Infos';
-import { getEmail } from '../../helpers/localStorageSaves';
+import { getBlurOption, getEmail, saveBlurOption } from '../../helpers/localStorageSaves';
 
 function Header() {
-    const [seeBalance, setSeeBalance] = useState(false)
-    const [blurId, setBlurId] = useState('blur')
+    const [seeBalance, setSeeBalance] = useState(false);
+    const [blurId, setBlurId] = useState('blur');
+    const blurOption = getBlurOption();
 
 
     const handleClick = () => {
         setSeeBalance(!seeBalance)
+        saveBlurOption(!getBlurOption())
     }
 
     useEffect(() => {
-        const checkDisbale = () => {
-            if (!seeBalance) {
+        const checkBlur = () => {
+            const blurOption = getBlurOption();
+            if (blurOption) {
                 setBlurId('blur');
             } else { setBlurId('none'); }
         };
-        checkDisbale();
-    }, [seeBalance]);
+        checkBlur();
+    }, [blurOption]);
 
     const balance = userInfos.balance.toLocaleString('pt-BR', {
         style: 'currency',
@@ -49,11 +52,11 @@ function Header() {
             </div>
             <div className={styles.BalanceDiv}>
                 <button onClick={handleClick} >
-                    {seeBalance ? <FontAwesomeIcon icon={faEye} /> :
+                    {!blurOption ? <FontAwesomeIcon icon={faEye} /> :
                         <FontAwesomeIcon icon={faEyeSlash} />}
                 </button>
                 <div className={styles.Balance} id={styles[`${blurId}`]}>
-                    <>{seeBalance ? normalBalance : blurBalance}</>
+                    <>{!blurOption ? normalBalance : blurBalance}</>
                 </div>
             </div>
         </div>
