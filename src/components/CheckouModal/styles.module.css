@@ -134,14 +134,12 @@
         align-items: center;
         display: flex;
         flex-direction: column;
-        font-size: 22px;
         justify-content: space-around;
-        height: 10em;
+        height: 12em;
     }
 
     .QtyInputs div {
         display: flex;
-        height: 3em;
     }
 
     .QtyInputs span {
@@ -149,6 +147,8 @@
         border-radius: 0.4em 0 0 0.4em;
         border: 0;
         display: flex;
+        font-size: 30px;
+        height: 2em;
         justify-content: center;
         text-align: center;
         width: 4.2em;
@@ -164,7 +164,7 @@
 
     .QtyInputs input {
         border: 0;
-        font-size: 18px;
+        font-size: 22px;
         padding-left: 0.8em;
         width: 14em;
     }
@@ -183,7 +183,7 @@
         border-radius: 0.8em;
         color: white;
         display: flex;
-        font-size: 20px;
+        font-size: 26px;
         height: 3em;
         justify-content: space-evenly;
         width: 12em;
