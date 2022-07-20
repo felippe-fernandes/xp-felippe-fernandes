@@ -57,7 +57,7 @@ function StockTable() {
                 </tr>
                 {myShareTable()}
                 <tr>
-                    <td>&nbsp;</td>
+                    <td id={styles.BlankRow}>&nbsp;</td>
                 </tr>
             </tbody>
             <thead>
