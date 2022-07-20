@@ -50,18 +50,18 @@
   
     #NameColumn {
         background-color: #ffc000;
-        width: 6em;
+        width: 5em;
     }
   
     #QtyColumn {
         background-color: #595959;
         color: white;
-        width: 6em;
+        width: 5em;
     }
   
     #PriceColumn {
         background-color: black;
         color: white;
-        width: 6em;
+        width: 5em;
     }
 }
