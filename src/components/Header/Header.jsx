@@ -6,7 +6,7 @@ import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
     const getUser = () => {
-        return getEmail().email
+        return getEmail().email.toLowerCase();
     }
 
     useEffect(() => {
