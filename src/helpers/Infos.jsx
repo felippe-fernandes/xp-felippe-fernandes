@@ -14,7 +14,10 @@ export const shares = [
 ]
 
 const getUser = () => {
-    return getEmail().email.toLowerCase();
+   const user = getEmail().email.toLowerCase();
+   if (!user) {
+    localStorage.setItem('user', JSON.stringify({ email: 'teste@xpInc.com' }));
+  }
 }
 
 export const userInfos = {user: getUser(), balance: 999.99};
