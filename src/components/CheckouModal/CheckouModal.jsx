@@ -5,8 +5,7 @@ import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faRotateLeft } from '@fortawesome/free-solid-svg-icons';
 import { Form, InputGroup } from 'react-bootstrap';
-import Lottie from "lottie-react";
-import SuccessAnimation from '../../Lottie/success.json'
+import SuccessScreen from '../SuccessScreen/SuccessScreen';
 
 function CheckouModal() {
     const { setShowModal } = useContext(Context)
@@ -66,14 +65,8 @@ function CheckouModal() {
             </div>
         </div>)
 
-    const successScreen =
-        (<div className={styles.ConfirmationScreenModal}>
-            <h1>Processo realizado com sucesso!</h1>
-            <Lottie animationData={SuccessAnimation} className={styles.Animation}/>
-        </div>)
-
     return (
-        <>{confirmationScreen ? successScreen : tableScreen}</>
+        <>{confirmationScreen ? <SuccessScreen /> : tableScreen}</>
     );
 }
 
