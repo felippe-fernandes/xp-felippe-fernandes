@@ -14,6 +14,7 @@ function TransactionForms() {
     const [confirmationScreen, setConfirmationScreen] = useState(false);
     const [confirmButtonDisable, setConfirmButtonDisable] = useState(false);
     const [inputValue, setInputValue] = useState(false);
+    const [optionChoose, setOption] = useState('depósito');
 
     useEffect(() => {
         const enableConfirmButton = () => {
@@ -27,12 +28,14 @@ function TransactionForms() {
     }, [inputValue]);
 
     const handleClick = (e) => {
-        if (e.target.value === 'deposito') {
+        if (e.target.value === 'do depósito') {
             setActiveDepositButton('selected')
             setActiveWithdrawalButton('normal')
+            setOption(e.target.value)
         } else {
             setActiveDepositButton('normal')
             setActiveWithdrawalButton('selected')
+            setOption(e.target.value)
         };
     }
 
@@ -41,35 +44,37 @@ function TransactionForms() {
     }
 
     const handleConfirmClick = () => {
-        setConfirmationScreen(true)
+        setConfirmationScreen(true)        
     }
 
     const transactionScreen = (
         <div className={styles.TransactionFormsComponent}>
-            <div className={styles.Buttons}>
-                <button
-                    id={styles[`${activeDepositButton}`]}
-                    className={styles.DepositButton}
-                    onClick={(e) => handleClick(e)}
-                    value='deposito'>
-                    Depósito
-                </button>
-                <button
-                    id={styles[`${activeWithdrawalButton}`]}
-                    className={styles.WithdrawalButton}
-                    onClick={(e) => handleClick(e)}
-                    value='retirada'>
-                    Retirada
-                </button>
+            <div className={styles.Forms}>
+                <div className={styles.Buttons}>
+                    <button
+                        id={styles[`${activeDepositButton}`]}
+                        className={styles.DepositButton}
+                        onClick={(e) => handleClick(e)}
+                        value='do depósito'>
+                        Depósito
+                    </button>
+                    <button
+                        id={styles[`${activeWithdrawalButton}`]}
+                        className={styles.WithdrawalButton}
+                        onClick={(e) => handleClick(e)}
+                        value='da retirada'>
+                        Retirada
+                    </button>
+                </div>
+                <InputGroup className={styles.Input}>
+                    <Form.Control
+                        onChange={({ target }) => setInputValue(target.value)}
+                        placeholder={`Informe o valor ${optionChoose}`}
+                        aria-label="Sell Input"
+                        type='number'
+                    />
+                </InputGroup>
             </div>
-            <InputGroup className={styles.Input}>
-                <Form.Control
-                    onChange={({ target }) => setInputValue(target.value)}
-                    placeholder="Informe o valor"
-                    aria-label="Sell Input"
-                    type='number'
-                />
-            </InputGroup>
             <div className={styles.CheckoutButtons}>
                 <button onClick={handleBackClick}><FontAwesomeIcon icon={faRotateLeft} />Voltar</button>
                 <button onClick={handleConfirmClick} disabled={confirmButtonDisable}>Confirmar<FontAwesomeIcon icon={faCheck} /></button>
