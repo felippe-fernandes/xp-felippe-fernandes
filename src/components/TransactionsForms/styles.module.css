@@ -132,6 +132,43 @@
     .CheckoutButtons button:disabled {
         background-color: dimgray;
     }
+
+    .SuccessScreenComponent {
+        height: 100%
+    }
+
+    .SuccessScreen {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        margin-top: 5em;
+    }
+
+    .SuccessScreen h1 {
+        color: white;
+        text-align: center;
+        font-size: 30px;
+    }
+    
+    .Animation {
+        margin-bottom: 3em;
+        width: 20em;
+    }
+
+    .SuccessScreen #OkButton {
+        align-items: center;
+        background-color: #7f5af0;
+        border: 0;
+        border-radius: 0.8em;
+        color: #fffffe;
+        display: flex;
+        font-size: 22px;
+        height: 3em;
+        justify-content: center;
+        width: 13em;
+    }
 }
 
 @media ( min-width : 481px ) {
@@ -206,11 +243,9 @@
         transform: rotate(-90deg);
     }
 
-
     #normal {
         filter: opacity(40%);
     }
-
 
     .Input {
         align-items: center;
