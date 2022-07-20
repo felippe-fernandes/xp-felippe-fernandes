@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { Form, InputGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRotateLeft, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faRotateLeft, faCheck, faMoneyBill1, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import SuccessScreen from '../SuccessScreen/SuccessScreen';
+
 
 
 function TransactionForms() {
@@ -44,7 +45,7 @@ function TransactionForms() {
     }
 
     const handleConfirmClick = () => {
-        setConfirmationScreen(true)        
+        setConfirmationScreen(true)
     }
 
     const transactionScreen = (
@@ -57,6 +58,7 @@ function TransactionForms() {
                         onClick={(e) => handleClick(e)}
                         value='do depósito'>
                         Depósito
+                        <div><FontAwesomeIcon icon={faMoneyBill1} className={styles.MoneyBillIcon} /><FontAwesomeIcon icon={faArrowUp} /></div>
                     </button>
                     <button
                         id={styles[`${activeWithdrawalButton}`]}
@@ -64,6 +66,7 @@ function TransactionForms() {
                         onClick={(e) => handleClick(e)}
                         value='da retirada'>
                         Retirada
+                        <div><FontAwesomeIcon icon={faMoneyBill1} className={styles.MoneyBillIcon} /><FontAwesomeIcon icon={faArrowDown} /></div>
                     </button>
                 </div>
                 <InputGroup className={styles.Input}>

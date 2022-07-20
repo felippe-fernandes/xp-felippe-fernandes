@@ -28,8 +28,8 @@
         display: flex;
         font-size: 22px;
         height: 2em;
-        justify-content: center;
-        width: 6em;
+        justify-content: space-evenly;
+        width: 8em;
     }
 
     .DepositButton p {
@@ -38,7 +38,14 @@
 
     .DepositButton svg {
         font-size: 20px;
-        margin-left: 1em;
+    }
+
+    .DepositButton div {
+        display: flex;
+    }
+
+    .DepositButton .MoneyBillIcon {
+        transform: rotate(90deg);
     }
 
     .WithdrawalButton {
@@ -50,8 +57,8 @@
         display: flex;
         font-size: 22px;
         height: 2em;
-        justify-content: center;
-        width: 6em;
+        justify-content: space-evenly;
+        width: 8em;
     }
 
     .WithdrawalButton p {
@@ -60,8 +67,16 @@
 
     .WithdrawalButton svg {
         font-size: 20px;
-        margin-left: 1em;
     }
+
+    .WithdrawalButton div {
+        display: flex;
+    }
+
+    .WithdrawalButton .MoneyBillIcon {
+        transform: rotate(-90deg);
+    }
+
 
     #normal {
     filter: opacity(40%);
