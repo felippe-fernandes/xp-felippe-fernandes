@@ -1,30 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAstronaut, faMoneyBillWave, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { userInfos } from '../../helpers/Infos';
-import { getBlurOption, getEmail, saveBlurOption } from '../../helpers/localStorageSaves';
+import { getEmail } from '../../helpers/localStorageSaves';
+import Context from '../../context/Context';
 
 function Header() {
-    const [seeBalance, setSeeBalance] = useState(false);
+    const { seeBalance, setSeeBalance } = useContext(Context);
     const [blurId, setBlurId] = useState('blur');
-    const blurOption = getBlurOption();
 
 
     const handleClick = () => {
         setSeeBalance(!seeBalance)
-        saveBlurOption(!getBlurOption())
     }
 
     useEffect(() => {
         const checkBlur = () => {
-            const blurOption = getBlurOption();
-            if (blurOption) {
+            if (!seeBalance) {
                 setBlurId('blur');
             } else { setBlurId('none'); }
         };
         checkBlur();
-    }, [blurOption]);
+    }, [seeBalance]);
 
     const balance = userInfos.balance.toLocaleString('pt-BR', {
         style: 'currency',
@@ -52,11 +50,11 @@ function Header() {
             </div>
             <div className={styles.BalanceDiv}>
                 <button onClick={handleClick} >
-                    {!blurOption ? <FontAwesomeIcon icon={faEye} /> :
+                    {seeBalance ? <FontAwesomeIcon icon={faEye} /> :
                         <FontAwesomeIcon icon={faEyeSlash} />}
                 </button>
                 <div className={styles.Balance} id={styles[`${blurId}`]}>
-                    <>{!blurOption ? normalBalance : blurBalance}</>
+                    <>{seeBalance ? normalBalance : blurBalance}</>
                 </div>
             </div>
         </div>

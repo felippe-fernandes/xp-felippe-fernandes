@@ -23,16 +23,3 @@ export const saveDate = (day, hour) => {
 };
 //
 
-// Blur Balance
-if (!JSON.parse(localStorage.getItem('blurBalanced'))) {
-  localStorage.setItem('blurBalanced', JSON.stringify(true));
-}
-
-export const getBlurOption = () => JSON.parse(localStorage.getItem('blurBalanced'));
-
-export const saveBlurOption = (option) => {
-  localStorage.setItem('blurBalanced', JSON.stringify(option));
-};
-
-//
-
