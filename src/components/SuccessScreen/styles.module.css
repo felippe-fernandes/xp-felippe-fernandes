@@ -3,7 +3,7 @@
         height: 100%
     }
 
-    .SuccessScreenComponent button {
+    .SuccessScreenComponent #ExitButton {
         background-color: #7f5af0;
         border: 0;
         border-radius: 0.8em;
@@ -19,15 +19,32 @@
         display: flex;
         flex-direction: column;
         height: 100%;
-        justify-content: center;
+        justify-content: space-evenly;
     }
 
     .SuccessScreen h1 {
         color: white;
         text-align: center;
     }
+
+    .SuccessScreen img {
+        width: 15em;
+    }
     
     .Animation {
+        margin-bottom: 1em;
         width: 15em;
+    }
+
+    .SuccessScreen #OkButton {
+        align-items: center;
+        background-color: #7f5af0;
+        border: 0;
+        border-radius: 0.8em;
+        color: #fffffe;
+        display: flex;
+        height: 2em;
+        justify-content: center;
+        width: 3em;
     }
 }
