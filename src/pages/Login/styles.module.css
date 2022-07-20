@@ -17,6 +17,7 @@
 
     .Logo img {
         max-height: 9vh;
+        max-width: 85vw;
         padding: 1em;
     }
 
@@ -36,17 +37,19 @@
         border-radius: 1em 0 0 1em;
         display: flex;
         flex-direction: column;
-        height: 6em;
+        max-height: 6vh;
         justify-content: space-between;
         position: relative;
     }
 
     .LoginInputs input {
+        align-items: center;
         background-color: #fffffe;
         border-radius: 0.8em;
-        height: 3em;
+        display: flex;
+        min-height: 5vh;
         padding-left: 1em;
-        width: 20em;
+        min-width: 70vw;
     }
 
     .LoginInputs input::placeholder {
@@ -64,9 +67,9 @@
         border-radius: 0.8em;
         color: #fffffe;
         display: flex;
-        height: 3em;
+        min-height: 5vh;
         justify-content: center;
-        width: 21em;
+        min-width: 70vw;
     }
 
     .LoginButton p {
@@ -82,4 +85,11 @@
         background-color: dimgray;
     }
 
+}
+
+@media ( min-width : 481px ) {
+
+    .LoginPage {
+        background-color: red;
+    }
 }
