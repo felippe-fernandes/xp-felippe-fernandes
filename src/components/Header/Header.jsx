@@ -5,6 +5,7 @@ import { faUserAstronaut, faMoneyBillWave, faEye, faEyeSlash } from '@fortawesom
 import { userInfos } from '../../helpers/Infos';
 import { getEmail } from '../../helpers/localStorageSaves';
 import Context from '../../context/Context';
+import xpLogo from '../../images/xp-inc-new.webp'
 
 function Header() {
     const { seeBalance, setSeeBalance } = useContext(Context);
@@ -45,16 +46,21 @@ function Header() {
 
     return (
         <div className={styles.HeaderComponent}>
-            <div className={styles.User}>
-                <p><FontAwesomeIcon icon={faUserAstronaut} /> {getEmail().email.toLowerCase()}</p>
+            <div className={styles.Logo}>
+                <img src={xpLogo} alt="XP Inc Logo" />
             </div>
-            <div className={styles.BalanceDiv}>
-                <button onClick={handleClick} >
-                    {seeBalance ? <FontAwesomeIcon icon={faEye} /> :
-                        <FontAwesomeIcon icon={faEyeSlash} />}
-                </button>
-                <div className={styles.Balance} id={styles[`${blurId}`]}>
-                    <>{seeBalance ? normalBalance : blurBalance}</>
+            <div className={styles.Infos}>
+                <div className={styles.User}>
+                    <p><FontAwesomeIcon icon={faUserAstronaut} /> {getEmail().email.toLowerCase()}</p>
+                </div>
+                <div className={styles.BalanceDiv}>
+                    <button onClick={handleClick} >
+                        {seeBalance ? <FontAwesomeIcon icon={faEye} /> :
+                            <FontAwesomeIcon icon={faEyeSlash} />}
+                    </button>
+                    <div className={styles.Balance} id={styles[`${blurId}`]}>
+                        <>{seeBalance ? normalBalance : blurBalance}</>
+                    </div>
                 </div>
             </div>
         </div>
