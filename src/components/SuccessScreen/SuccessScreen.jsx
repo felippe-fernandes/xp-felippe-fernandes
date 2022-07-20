@@ -19,10 +19,11 @@ function SuccessScreen() {
 
     return (
         <div className={styles.SuccessScreenComponent}>
-            <button><FontAwesomeIcon icon={faRectangleXmark} size='xl' onClick={handleClick} /></button>
+            <button id={styles.ExitButton} onClick={handleClick} ><FontAwesomeIcon icon={faRectangleXmark} size='xl'/></button>
             <div className={styles.SuccessScreen}>
                 <h1>Processo realizado com sucesso!</h1>
                 <Lottie animationData={SuccessAnimation} className={styles.Animation} />
+                <button id={styles.OkButton} onClick={handleClick} >OK</button>
             </div>
         </div>
     );
