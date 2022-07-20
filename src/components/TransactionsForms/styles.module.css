@@ -19,12 +19,13 @@
         align-items: center;
         background-color: #4c9a5b;
         border: 0;
-        border-radius: 0.8em;
+        border-radius: 0.5em;
         color: #fffffe;
         display: flex;
-        height: 3em;
+        font-size: 22px;
+        height: 2em;
         justify-content: center;
-        width: 21em;
+        width: 6em;
     }
 
     .DepositButton p {
@@ -40,12 +41,13 @@
         align-items: center;
         background-color: #4059ad;
         border: 0;
-        border-radius: 0.8em;
+        border-radius: 0.5em;
         color: #fffffe;
         display: flex;
-        height: 3em;
+        font-size: 22px;
+        height: 2em;
         justify-content: center;
-        width: 21em;
+        width: 6em;
     }
 
     .WithdrawalButton p {
