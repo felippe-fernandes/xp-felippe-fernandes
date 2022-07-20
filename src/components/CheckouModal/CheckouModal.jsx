@@ -3,7 +3,7 @@ import Context from '../../context/Context';
 import CheckoutTable from '../CheckoutTable/CheckoutTable';
 import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faRotateLeft } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faRotateLeft, faXmarkSquare } from '@fortawesome/free-solid-svg-icons';
 import { Form, InputGroup } from 'react-bootstrap';
 import SuccessScreen from '../SuccessScreen/SuccessScreen';
 
@@ -35,8 +35,13 @@ function CheckouModal() {
 
     const tableScreen =
         (<div className={styles.CheckouModalComponent}>
-            <div className={styles.FirstDiv}>
-                <h1>Comprar/Vender Ação</h1>
+            <div className={styles.Header}>
+                <div className={styles.Title}>
+                    <h1>Comprar/Vender Ação</h1>
+                    <button id={styles.ExitButton}>
+                        <FontAwesomeIcon icon={faXmarkSquare} />
+                    </button>
+                </div>
                 <CheckoutTable />
             </div>
             <div className={styles.QtyInputs}>

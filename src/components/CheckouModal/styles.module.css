@@ -14,6 +14,10 @@
         padding-left: 0.8em;
     }
 
+    .Title #ExitButton {
+        display: none;
+    }
+
     .QtyInputs {
         align-items: center;
         display: flex;
@@ -102,6 +106,22 @@
         justify-content: space-between;
     }
 
+    .Title {
+        align-items: center;
+        background-color: #72757e;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        padding-right: 2em;
+    }
+
+    .Title #ExitButton {
+        background-color: transparent;
+        border: 0;
+        color: #fffffe;
+        font-size: 20px;
+    }
+
     .CheckouModalComponent h1 {
         color: white;
         font-size: 20px;
@@ -114,14 +134,14 @@
         align-items: center;
         display: flex;
         flex-direction: column;
-        font-size: 18px;
+        font-size: 22px;
         justify-content: space-around;
-        height: 7em;
+        height: 10em;
     }
 
     .QtyInputs div {
         display: flex;
-        height: 2em;
+        height: 3em;
     }
 
     .QtyInputs span {
@@ -144,8 +164,9 @@
 
     .QtyInputs input {
         border: 0;
-        font-size: 16px;
+        font-size: 18px;
         padding-left: 0.8em;
+        width: 14em;
     }
 
     .CheckoutButtons {
@@ -162,10 +183,10 @@
         border-radius: 0.8em;
         color: white;
         display: flex;
-        font-size: 18px;
-        height: 2em;
+        font-size: 20px;
+        height: 3em;
         justify-content: space-evenly;
-        width: 8em;
+        width: 12em;
     }
 
     .CheckoutButtons button:disabled {
