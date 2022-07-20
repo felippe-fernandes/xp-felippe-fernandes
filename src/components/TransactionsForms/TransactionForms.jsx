@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { Form, InputGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRotateLeft, faCheck, faMoneyBill1, faArrowUp, faArrowDown, faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faRotateLeft, faCheck, faMoneyBill1, faArrowUp, faArrowDown} from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-import SuccessScreen from '../SuccessScreen/SuccessScreen';
 import Lottie from "lottie-react";
 import SuccessAnimation from '../../Lottie/success.json'
 
