@@ -65,3 +65,67 @@
         width: 5em;
     }
 }
+
+@media ( min-width : 481px ){
+    .CheckoutTableComponent {
+        width: 100%;
+    }
+    
+    .Table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: flex;
+        text-align: center;
+        width: 100%;
+    }
+
+    .Table tbody {
+        width: 100%;
+    }
+    
+    .Table .TableSubHeaderRow {
+        background-color: #fffffe;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+  
+    .Table .TableSubHeaderData {
+        background-color: #fffffe;
+        font-size: 20px;
+        font-weight: 400;
+        width: 7em;
+    }
+  
+    .Table tr{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .Table tbody td {
+        border: 1px solid #fffffe;
+        font-size: 18px;
+        overflow: hidden;
+        text-align: center;
+        vertical-align: middle;
+        word-break: normal;
+    }
+  
+    #NameColumn {
+        background-color: #ffc000;
+        width: 100%;
+    }
+  
+    #QtyColumn {
+        background-color: #595959;
+        color: white;
+        width: 100%;
+    }
+  
+    #PriceColumn {
+        background-color: black;
+        color: white;
+        width: 100%;
+    }
+}
