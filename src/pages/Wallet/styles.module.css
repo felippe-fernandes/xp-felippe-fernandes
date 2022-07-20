@@ -37,3 +37,43 @@
         font-size: 26px;
     }
 }
+
+@media ( min-width : 481px ) {
+    .WalletPage {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .Modal {
+        background-color: #16161a;
+        bottom: 14vh;
+        left: 6vh;
+        position: absolute;
+        right: 6vh;
+        top: 14vh;
+    }
+
+    .TransferButton {
+        align-items: center;
+        align-self: center;
+        background-color: #7f5af0;
+        border: 0;
+        border-radius: 0.8em;
+        bottom: 5vh;
+        color: #fffffe;
+        display: flex;
+        height: 3.5em;
+        justify-content: center;
+        position: fixed;
+        width: 30em;
+    }
+
+    .TransferButton p {
+        font-size: 26px;
+    }
+
+    .TransferButton svg {
+        font-size: 26px;
+    }
+}
