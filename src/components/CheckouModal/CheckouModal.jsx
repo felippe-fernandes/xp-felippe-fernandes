@@ -24,10 +24,10 @@ function CheckouModal() {
 
     useEffect(() => {
         const enableConfirmButton = () => {
-            if (sellValue || buyValue <= 0) {
-                setConfirmButtonDisable(true)
-            } else {
+            if (sellValue || buyValue > 0) {
                 setConfirmButtonDisable(false)
+            } else {
+                setConfirmButtonDisable(true)
             }
         };
         enableConfirmButton();
