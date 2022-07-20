@@ -160,7 +160,7 @@
     }
 
     .BalanceDiv button svg {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .Balance {
@@ -170,11 +170,12 @@
         border-radius: 0.5em;
         color: #fffffe;
         display: flex;
+        font-size: 22px;
         height: 4em;        
         justify-content: space-evenly;
         width: 10em;
     }
-
+    
     #blur {
         align-items: center;
         background-color: #7f5af0;
