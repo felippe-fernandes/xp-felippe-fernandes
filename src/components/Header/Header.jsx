@@ -29,17 +29,17 @@ function Header() {
     })
 
     const normalBalance = (
-        <p>
+        <>
             <FontAwesomeIcon icon={faMoneyBillWave} />
-            {balance}
-        </p>
+            <p>{balance}</p>
+        </>
     )
 
     const blurBalance = (
-        <p>
+        <>
             <FontAwesomeIcon icon={faMoneyBillWave} />
-            ------
-        </p>
+            <p>---------------------------</p>
+        </>
     )
 
     return (

@@ -48,19 +48,11 @@
         background-color: #7f5af0;
         border: 1px solid #fffffe;
         border-radius: 0.5em;
+        color: #fffffe;
         display: flex;
         height: 1.5em;        
-        justify-content: center;
+        justify-content: space-evenly;
         width: 10em;
-    }
-
-    .Balance p {
-        color: #fffffe;
-        padding: 0.4em;
-    }
-
-    .Balance p svg{
-        margin-right: 0.3em;
     }
 
     #blur {
