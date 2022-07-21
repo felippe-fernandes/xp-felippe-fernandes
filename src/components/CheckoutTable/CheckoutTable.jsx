@@ -3,7 +3,7 @@ import Context from '../../context/Context';
 import styles from './styles.module.css';
 
 function CheckoutTable() {
-    const { shareSelected, shares } = useContext(Context)
+    const { shareSelected } = useContext(Context)
 
 
     return (
