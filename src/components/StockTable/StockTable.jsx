@@ -34,7 +34,7 @@ function StockTable() {
     };
 
     const otherSharesTable = () => {
-        return shares.filter((share) => share.qty === 0).map((share) => (
+        return shares.map((share) => (
             <tr key={share.name}>
                 <td id={styles.NameColumn}>{share.name}</td>
                 <td id={styles.QtyColumn}>{share.qtyAvailable}</td>
