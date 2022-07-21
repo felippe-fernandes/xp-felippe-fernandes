@@ -42,7 +42,7 @@ function CheckouModal() {
             }
         };
         enableConfirmButton();
-    }, [buyQty, sellQty]);
+    }, [buyQty, sellQty, shareSelected.qtyAvailable]);
 
     const tableScreen =
         (<div className={styles.CheckouModalComponent}>
