@@ -42,7 +42,6 @@ function Login() {
             <FormControl
               value={email}
               onChange={({ target }) => setEmail(target.value)}
-              type="email"
               placeholder="E-mail"
               aria-label="Email"
             />
@@ -51,7 +50,6 @@ function Login() {
             <FormControl
               value={password}
               onChange={({ target }) => setPassword(target.value)}
-              type="password"
               placeholder="Senha"
               aria-label="password"
             />

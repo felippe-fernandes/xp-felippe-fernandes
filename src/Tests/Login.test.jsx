@@ -1,35 +1,124 @@
-import { screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import Login from '../pages/Login/Login';
+import App from '../App';
 import renderWithRouter from '../Utils/RenderWithRouter';
 
 describe('Teste a página de Login', () => {
-  test('Teste se a página possui dois inputs', () => {
+  it('Teste se a página possui dois inputs', () => {
     renderWithRouter(<Login />);
 
     const inputs = screen.getAllByRole('textbox');
     console.log(inputs);
     expect(inputs).toHaveLength(2);
   });
-  // test('Teste se a página contém um heading h2 com o texto About Pokédex', () => {
-  //   renderWithRouter(<About />);
+  it('Teste se o input de email possui o placeholder E-mail', () => {
+    renderWithRouter(<Login />);
 
-  //   const getAboutPokedexText = screen.getByRole('heading',
-  //     { name: /About Pokédex/i, level: 2 });
-  //   expect(getAboutPokedexText).toBeInTheDocument();
-  // });
-  // test('Teste se a página contém dois parágrafos com texto sobre a Pokédex.', () => {
-  //   renderWithRouter(<About />);
-  //   const arrOfParagraphs = [];
-  //   const imgSection = screen.getByRole('img').parentElement.childNodes;
-  //   imgSection.forEach((item) => arrOfParagraphs.push(item.nodeName));
-  //   const arrFiltered = arrOfParagraphs.filter((element) => element === 'P');
-  //   console.log(arrFiltered);
-  //   expect(arrFiltered.length).toBe(2);
-  // });
-  // test('Teste se a página contém a seguinte imagem de uma Pokédex', () => {
-  //   renderWithRouter(<About />);
-  //   const img = screen.getByAltText('Pokédex');
-  //   expect(img).toHaveAttribute('src', 'https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png');
-  // });
+    const getEmailInput = screen.getByRole('textbox', {
+      name: /email/i
+    });
+    const emailInputPlaceholder = getEmailInput.getAttribute('placeholder');
+
+    expect(emailInputPlaceholder).toBe('E-mail');
+  });
+  it('Teste se o input de password possui o placeholder Senha', () => {
+    renderWithRouter(<Login />);
+
+    const getPasswordInput = screen.getByRole('textbox', {
+      name: /password/i
+    });
+    const passwordInputPlaceholder = getPasswordInput.getAttribute('placeholder');
+
+    expect(passwordInputPlaceholder).toBe('Senha');
+  });
+
+  it('Teste se existe um botão', () => {
+    renderWithRouter(<Login />);
+
+    const button = screen.getAllByRole('button');
+
+    expect(button).toHaveLength(1);
+  });
+  it('Teste se o botão tem o texto Acessar', () => {
+    renderWithRouter(<Login />);
+
+    const accessButton = screen.getByRole('button', {
+      name: /acessar/i
+    });
+
+    expect(accessButton).toBeInTheDocument();
+  });
+  it('Teste se o botão começa desabilitado', () => {
+    renderWithRouter(<Login />);
+
+    const accessButton = screen.getByRole('button', {
+      name: /acessar/i
+    });
+
+    expect(accessButton).toBeDisabled();
+  });
+  it('Teste se o botão habilita depois de um email e uma senha válidos', () => {
+    renderWithRouter(<Login />);
+
+    const getEmailInput = screen.getByRole('textbox', {
+      name: /email/i
+    });
+    const getPasswordInput = screen.getByRole('textbox', {
+      name: /password/i
+    });
+    const accessButton = screen.getByRole('button', {
+      name: /acessar/i
+    });
+
+    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } })
+    fireEvent.change(getPasswordInput, { target: { value: '123456' } })
+
+    expect(accessButton).toBeEnabled();
+  });
+  it('Teste se o botão continua desabilitado com um email e uma senha inválidos', () => {
+    renderWithRouter(<Login />);
+
+    const getEmailInput = screen.getByRole('textbox', {
+      name: /email/i
+    });
+    const getPasswordInput = screen.getByRole('textbox', {
+      name: /password/i
+    });
+    const accessButton = screen.getByRole('button', {
+      name: /acessar/i
+    });
+
+    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc' } })
+    fireEvent.change(getPasswordInput, { target: { value: '123456' } })
+    expect(accessButton).toBeDisabled();
+
+    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } })
+    fireEvent.change(getPasswordInput, { target: { value: '1234' } })
+    expect(accessButton).toBeDisabled();
+
+    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc' } })
+    fireEvent.change(getPasswordInput, { target: { value: '1234' } })
+    expect(accessButton).toBeDisabled();
+  });
+  it.only('Teste se ao clicar no botão de acessar o usuario é redirecionado para a /wallets', () => {
+    const { history } = renderWithRouter(<App />);
+
+    const getEmailInput = screen.getByRole('textbox', {
+      name: /email/i
+    });
+    const getPasswordInput = screen.getByRole('textbox', {
+      name: /password/i
+    });
+    const accessButton = screen.getByRole('button', {
+      name: /acessar/i
+    });
+
+    const { pathname } = history.location;
+
+    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc' } })
+    fireEvent.change(getPasswordInput, { target: { value: '123456' } })
+    fireEvent.click(accessButton)
+    console.log(pathname);
+  });
 });
