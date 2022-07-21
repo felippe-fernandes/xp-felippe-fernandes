@@ -44,6 +44,7 @@ function Login() {
               onChange={({ target }) => setEmail(target.value)}
               placeholder="E-mail"
               aria-label="Email"
+              type='email'
             />
           </InputGroup>
           <InputGroup className={styles.mb3}>
@@ -52,6 +53,8 @@ function Login() {
               onChange={({ target }) => setPassword(target.value)}
               placeholder="Senha"
               aria-label="password"
+              type='password'
+              role='textbox'
             />
           </InputGroup>
         </div>
