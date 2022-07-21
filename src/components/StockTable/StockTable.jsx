@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
 import styles from './styles.module.css';
-import { shares } from '../../helpers/Infos';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faC, faV } from '@fortawesome/free-solid-svg-icons';
 import Context from '../../context/Context';
 
 function StockTable() {
-    const { setShareSelected, setShowModal } = useContext(Context)
+    const { setShareSelected, setShowModal, shares } = useContext(Context)
 
     const handleClick = (share) => {
         setShowModal(true)
@@ -14,11 +13,18 @@ function StockTable() {
     }
 
     const myShareTable = () => {
-        return shares.filter((share) => share.itHas).map((share) => (
+        return shares.filter((share) => share.qty > 0).map((share) => (
             <tr key={share.name}>
                 <td id={styles.NameColumn}>{share.name}</td>
                 <td id={styles.QtyColumn}>{share.qty}</td>
-                <td id={styles.PriceColumn}>{Number(share.price).toFixed(2).replace('.', ',')}</td>
+                <td id={styles.PriceColumn}>{Number(share.price).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                })}</td>
+                <td id={styles.TotalPriceColumn}>{Number((share.price * share.qty)).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                })}</td>
                 <td id={styles.ButtonsColumn}>
                     <button id={styles.BuyButton} onClick={() => handleClick(share)}><FontAwesomeIcon icon={faC} /></button>
                     <button id={styles.SellButton} onClick={() => handleClick(share)}><FontAwesomeIcon icon={faV} /></button>
@@ -28,11 +34,14 @@ function StockTable() {
     };
 
     const otherSharesTable = () => {
-        return shares.filter((share) => !share.itHas).map((share) => (
+        return shares.filter((share) => share.qty === 0).map((share) => (
             <tr key={share.name}>
                 <td id={styles.NameColumn}>{share.name}</td>
-                <td id={styles.QtyColumn}>{share.qty}</td>
-                <td id={styles.PriceColumn}>{Number(share.price).toFixed(2).replace('.', ',')}</td>
+                <td id={styles.QtyColumn}>{share.qtyAvailable}</td>
+                <td id={styles.PriceColumn}>{Number(share.price).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                })}</td>
                 <td id={styles.ButtonsColumn}>
                     <button id={styles.BuyButton} onClick={() => handleClick(share)}><FontAwesomeIcon icon={faC} /></button>
                     <button id={styles.SellButton} onClick={() => handleClick(share)} disabled={!share.itHas}><FontAwesomeIcon icon={faV} /></button>
@@ -51,8 +60,9 @@ function StockTable() {
             <tbody>
                 <tr className={styles.TableSubHeaderRow}>
                     <th className={styles.TableSubHeaderData}>Ação</th>
-                    <th className={styles.TableSubHeaderData}>Qtde</th>
-                    <th className={styles.TableSubHeaderData}>Valor (R$)</th>
+                    <th className={styles.TableSubHeaderData}>Minhas ações</th>
+                    <th className={styles.TableSubHeaderData}>Valor Unitário</th>
+                    <th className={styles.TableSubHeaderData}>Valor Total</th>
                     <th className={styles.TableSubHeaderData}>Negociar</th>
                 </tr>
                 {myShareTable()}
@@ -68,8 +78,8 @@ function StockTable() {
             <tbody>
                 <tr className={styles.TableSubHeaderRow}>
                     <th className={styles.TableSubHeaderData}>Ação</th>
-                    <th className={styles.TableSubHeaderData}>Qtde</th>
-                    <th className={styles.TableSubHeaderData}>Valor (R$)</th>
+                    <th className={styles.TableSubHeaderData}>Disponiveis</th>
+                    <th className={styles.TableSubHeaderData}>Valor Unitário</th>
                     <th className={styles.TableSubHeaderData}>Negociar</th>
                 </tr>
                 {otherSharesTable()}

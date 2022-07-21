@@ -5,40 +5,51 @@ import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faRotateLeft, faXmarkSquare } from '@fortawesome/free-solid-svg-icons';
 import { Form, InputGroup } from 'react-bootstrap';
+import { transaction } from '../../helpers/transactionsFunctions'
 import SuccessScreen from '../SuccessScreen/SuccessScreen';
 
 function CheckouModal() {
-    const { setShowModal } = useContext(Context)
+    const { setShowModal, shares, setShares, shareSelected } = useContext(Context)
     const [confirmationScreen, setConfirmationScreen] = useState(false);
     const [confirmButtonDisable, setConfirmButtonDisable] = useState(false);
-    const [buyValue, setBuyValue] = useState(0);
-    const [sellValue, setSellValue] = useState(0);
+    const [buyQty, setBuyQty] = useState(0);
+    const [sellQty, setSellQty] = useState(0);
 
     const handleBackClick = () => {
         setShowModal(false)
     }
 
-    const handleConfirmClick = () => {
+    const handleCloseClick = () => {
+        setShowModal(false)
+    }
+
+    const handleConfirmClick = () => {       
         setConfirmationScreen(true)
+        transaction(shares, setShares, shareSelected, sellQty, buyQty)
     }
 
     useEffect(() => {
         const enableConfirmButton = () => {
-            if (sellValue || buyValue > 0) {
+            if (sellQty || buyQty > 0 ) {
                 setConfirmButtonDisable(false)
-            } else {
+            }  if (sellQty > shareSelected.qtyAvailable) {
                 setConfirmButtonDisable(true)
+            }
+            if (buyQty > shareSelected.qtyAvailable) {
+                setConfirmButtonDisable(true)
+            } else {
+                setConfirmButtonDisable(false)
             }
         };
         enableConfirmButton();
-    }, [buyValue, sellValue]);
+    }, [buyQty, sellQty]);
 
     const tableScreen =
         (<div className={styles.CheckouModalComponent}>
             <div className={styles.Header}>
                 <div className={styles.Title}>
                     <h1>Comprar/Vender Ação</h1>
-                    <button id={styles.ExitButton}>
+                    <button onClick={handleCloseClick} id={styles.ExitButton}>
                         <FontAwesomeIcon icon={faXmarkSquare} />
                     </button>
                 </div>
@@ -48,8 +59,8 @@ function CheckouModal() {
                 <InputGroup className={styles.Inputs}>
                     <InputGroup.Text id={styles.BuyButton}>Comprar</InputGroup.Text>
                     <Form.Control
-                        onChange={({ target }) => setBuyValue(target.value)}
-                        placeholder="Informe o valor"
+                        onChange={({ target }) => setBuyQty(Number(target.value))}
+                        placeholder="Informe a quantidade"
                         aria-label="Buy Input"
                         type='number'
                     />
@@ -57,10 +68,11 @@ function CheckouModal() {
                 <InputGroup className={styles.Inputs}>
                     <InputGroup.Text id={styles.SellButton}>Vender</InputGroup.Text>
                     <Form.Control
-                        onChange={({ target }) => setSellValue(target.value)}
-                        placeholder="Informe o valor"
+                        onChange={({ target }) => setSellQty(Number(target.value))}
+                        placeholder="Informe a quantidade"
                         aria-label="Sell Input"
                         type='number'
+                        disabled={shareSelected.qty === 0}
                     />
                 </InputGroup>
             </div>
