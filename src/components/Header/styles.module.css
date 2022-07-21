@@ -171,9 +171,9 @@
         color: #fffffe;
         display: flex;
         font-size: 22px;
-        height: 4em;        
+        height: 2em;        
         justify-content: space-evenly;
-        width: 10em;
+        width: 9em;
     }
     
     #blur {
@@ -182,9 +182,9 @@
         border: 1px solid #fffffe;
         border-radius: 0.5em;
         display: flex;
-        height: 4em;        
+        height: 2em;        
         justify-content: center;
         filter: blur(4px);
-        width: 10em;
+        width: 9em;
     }
 }
