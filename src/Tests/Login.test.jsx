@@ -1,8 +1,10 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import Login from '../pages/Login/Login';
 import App from '../App';
 import renderWithRouter from '../Utils/RenderWithRouter';
+import { BrowserRouter } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
 
 describe('Teste a página de Login', () => {
   it('Teste se a página possui dois inputs', () => {
@@ -101,8 +103,8 @@ describe('Teste a página de Login', () => {
     fireEvent.change(getPasswordInput, { target: { value: '1234' } })
     expect(accessButton).toBeDisabled();
   });
-  it.only('Teste se ao clicar no botão de acessar o usuario é redirecionado para a /wallets', () => {
-    const { history } = renderWithRouter(<App />);
+  it.only('Teste se ao clicar no botão de acessar o usuario é redirecionado para a /wallets', async () => {
+    const { history } = renderWithRouter(<App />)
 
     const getEmailInput = screen.getByRole('textbox', {
       name: /email/i
@@ -114,11 +116,9 @@ describe('Teste a página de Login', () => {
       name: /acessar/i
     });
 
-    const { pathname } = history.location;
-
     fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc' } })
     fireEvent.change(getPasswordInput, { target: { value: '123456' } })
-    fireEvent.click(accessButton)
-    console.log(pathname);
+    await userEvent.click(accessButton)
+    console.log(history.location);
   });
 });
