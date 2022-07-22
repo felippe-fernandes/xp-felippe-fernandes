@@ -25,8 +25,7 @@ function TransactionForms() {
         const enableConfirmButton = () => {
             if (inputValue <= 0) {
                 setConfirmButtonDisable(true)
-            }
-            if (optionChoose === 'da retirada' && balance < inputValue) {
+            } else if (optionChoose === 'da retirada' && balance < inputValue) {
                 setConfirmButtonDisable(true)
             } else {
                 setConfirmButtonDisable(false)                

@@ -11,7 +11,7 @@ import SuccessScreen from '../SuccessScreen/SuccessScreen';
 function CheckouModal() {
     const { setShowModal, shares, setShares, shareSelected } = useContext(Context)
     const [confirmationScreen, setConfirmationScreen] = useState(false);
-    const [confirmButtonDisable, setConfirmButtonDisable] = useState(false);
+    const [confirmButtonDisable, setConfirmButtonDisable] = useState(true);
     const [buyQty, setBuyQty] = useState(0);
     const [sellQty, setSellQty] = useState(0);
 
@@ -31,19 +31,22 @@ function CheckouModal() {
     useEffect(() => {
         const enableConfirmButton = () => {
             if (sellQty || buyQty > 0) {
+                console.log('maior q 0');
                 setConfirmButtonDisable(false)
             }
-            if (sellQty > shareSelected.qtyAvailable) {
-                setConfirmButtonDisable(true)
+            if (buyQty <= shareSelected.qtyAvailable && buyQty > 0) {
+                console.log('menos q o maximo');
+                setConfirmButtonDisable(false);
+            } else if (sellQty <= shareSelected.qty && sellQty > 0) {
+                console.log('mais q o maximo');
+                setConfirmButtonDisable(false);
             }
-            if (buyQty > shareSelected.qtyAvailable) {
+            else {
                 setConfirmButtonDisable(true)
-            } else {
-                setConfirmButtonDisable(false)
             }
         };
         enableConfirmButton();
-    }, [buyQty, sellQty, shareSelected.qtyAvailable]);
+    }, [buyQty, sellQty, shareSelected.qty, shareSelected.qtyAvailable]);
 
     const tableScreen =
         (<div className={styles.CheckouModalComponent}>
