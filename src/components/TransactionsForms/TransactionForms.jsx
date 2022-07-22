@@ -33,7 +33,7 @@ function TransactionForms() {
             }
         };
         enableConfirmButton();
-    }, [inputValue]);
+    }, [balance, inputValue, optionChoose]);
 
     const handleClick = (e) => {
         if (e.target.value === 'do depósito') {
