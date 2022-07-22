@@ -73,7 +73,7 @@
     background-color: #337357;
     color: white;
     height: 2em;
-    width: 5em;
+    width: 5.26em;
   }
   
   #ButtonsColumn {
@@ -107,7 +107,7 @@
     align-items: center;
     border-radius: 0.4em;
     display: flex;
-    font-size: 18px;
+    font-size: 16px;
     justify-content: space-evenly;
     margin: 0;
     width: 4.5em;
