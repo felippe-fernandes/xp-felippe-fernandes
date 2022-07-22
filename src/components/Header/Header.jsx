@@ -7,7 +7,7 @@ import xpLogo from '../../images/xp-inc-new.webp'
 import { user } from '../../helpers/infos';
 
 function Header() {
-    const { seeBalance, setSeeBalance, userInfos } = useContext(Context);
+    const { seeBalance, setSeeBalance, balance } = useContext(Context);
     const [blurId, setBlurId] = useState('blur');
 
 
@@ -27,7 +27,7 @@ function Header() {
     const normalBalance = (
         <>
             <FontAwesomeIcon icon={faMoneyBillWave} />
-            <p>{userInfos.balance.toLocaleString('pt-BR', {
+            <p>{balance.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL',
     })}</p>

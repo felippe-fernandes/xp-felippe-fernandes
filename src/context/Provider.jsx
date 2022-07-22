@@ -19,12 +19,12 @@ function Provider({ children }) {
     { name: 'RCSL4', qtyAvailable: 1045, qty: 0, price: 1.03 },
   ]);
 
-  const [userInfos, setUserInfo] = useState({ user: '', balance: 722.98 });
+  const [balance, setBalance] = useState(722.98);
 
 
   const objValue = {
-    showModal, setShowModal, shareSelected, setShareSelected, seeBalance, setSeeBalance, userInfos, setUserInfo,
-    shares, setShares
+    showModal, setShowModal, shareSelected, setShareSelected, seeBalance, setSeeBalance,
+    shares, setShares, balance, setBalance
   };
 
   return (

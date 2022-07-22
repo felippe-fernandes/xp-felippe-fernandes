@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faRotateLeft, faXmarkSquare } from '@fortawesome/free-solid-svg-icons';
 import { Form, InputGroup } from 'react-bootstrap';
-import { transaction } from '../../helpers/transactionsFunctions'
+import { buyAndSellActions } from '../../helpers/transactionsFunctions'
 import SuccessScreen from '../SuccessScreen/SuccessScreen';
 
 function CheckouModal() {
@@ -23,16 +23,17 @@ function CheckouModal() {
         setShowModal(false)
     }
 
-    const handleConfirmClick = () => {       
+    const handleConfirmClick = () => {
         setConfirmationScreen(true)
-        transaction(shares, setShares, shareSelected, sellQty, buyQty)
+        buyAndSellActions(shares, setShares, shareSelected, sellQty, buyQty)
     }
 
     useEffect(() => {
         const enableConfirmButton = () => {
-            if (sellQty || buyQty > 0 ) {
+            if (sellQty || buyQty > 0) {
                 setConfirmButtonDisable(false)
-            }  if (sellQty > shareSelected.qtyAvailable) {
+            }
+            if (sellQty > shareSelected.qtyAvailable) {
                 setConfirmButtonDisable(true)
             }
             if (buyQty > shareSelected.qtyAvailable) {

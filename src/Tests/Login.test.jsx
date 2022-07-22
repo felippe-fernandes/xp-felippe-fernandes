@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import Login from '../pages/Login/Login';
-import renderWithRouter from '../Utils/RenderWithRouter';
+import renderWithRouter from './Utils/RenderWithRouter';
 
 describe('Teste a página de Login', () => {
   it('Teste se a página possui dois inputs', () => {
