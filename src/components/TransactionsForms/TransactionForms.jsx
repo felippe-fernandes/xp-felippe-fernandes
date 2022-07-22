@@ -1,29 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './styles.module.css';
+import Context from '../../context/Context';
 import { Form, InputGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRotateLeft, faCheck, faMoneyBill1, faArrowUp, faArrowDown} from '@fortawesome/free-solid-svg-icons';
+import { faRotateLeft, faCheck, faMoneyBill1, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import Lottie from "lottie-react";
 import SuccessAnimation from '../../Lottie/success.json'
+import { depositAndWithdrawal } from '../../helpers/transactionsFunctions';
 
 
 
 function TransactionForms() {
     let navigate = useNavigate();
+    const { balance, setBalance } = useContext(Context)
     const [activeDepositButton, setActiveDepositButton] = useState('selected')
     const [activeWithdrawalButton, setActiveWithdrawalButton] = useState('normal')
     const [confirmationScreen, setConfirmationScreen] = useState(false);
     const [confirmButtonDisable, setConfirmButtonDisable] = useState(false);
-    const [inputValue, setInputValue] = useState(false);
-    const [optionChoose, setOption] = useState('depósito');
+    const [inputValue, setInputValue] = useState(0);
+    const [optionChoose, setOption] = useState('do depósito');
 
     useEffect(() => {
         const enableConfirmButton = () => {
             if (inputValue <= 0) {
                 setConfirmButtonDisable(true)
+            }
+            if (optionChoose === 'da retirada' && balance < inputValue) {
+                setConfirmButtonDisable(true)
             } else {
-                setConfirmButtonDisable(false)
+                setConfirmButtonDisable(false)                
             }
         };
         enableConfirmButton();
@@ -46,6 +52,7 @@ function TransactionForms() {
     }
 
     const handleConfirmClick = () => {
+        depositAndWithdrawal(balance, setBalance, optionChoose, inputValue)
         setConfirmationScreen(true)
     }
 
@@ -76,7 +83,7 @@ function TransactionForms() {
                 </div>
                 <InputGroup className={styles.Input}>
                     <Form.Control
-                        onChange={({ target }) => setInputValue(target.value)}
+                        onChange={({ target }) => setInputValue(Number(target.value.replace('.','.')))}
                         placeholder={`Informe o valor ${optionChoose}`}
                         aria-label="Sell Input"
                         type='number'
