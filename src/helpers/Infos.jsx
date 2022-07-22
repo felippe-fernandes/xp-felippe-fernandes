@@ -7,4 +7,4 @@ const getUser = () => {
   }
 }
 
-export const userInfos = {user: getUser(), balance: 722.98};
+export const userInfos = {user: getUser()};

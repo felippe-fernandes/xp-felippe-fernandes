@@ -2,13 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAstronaut, faMoneyBillWave, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { userInfos } from '../../helpers/Infos';
 import { getEmail } from '../../helpers/localStorageSaves';
 import Context from '../../context/Context';
 import xpLogo from '../../images/xp-inc-new.webp'
 
 function Header() {
-    const { seeBalance, setSeeBalance } = useContext(Context);
+    const { seeBalance, setSeeBalance, balance } = useContext(Context);
     const [blurId, setBlurId] = useState('blur');
 
 
@@ -25,15 +24,13 @@ function Header() {
         checkBlur();
     }, [seeBalance]);
 
-    const balance = userInfos.balance.toLocaleString('pt-BR', {
-        style: 'currency',
-        currency: 'BRL',
-    })
-
     const normalBalance = (
         <>
             <FontAwesomeIcon icon={faMoneyBillWave} />
-            <p>{balance}</p>
+            <p>{balance.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+    })}</p>
         </>
     )
 

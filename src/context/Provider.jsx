@@ -19,9 +19,11 @@ function Provider({ children }) {
     { name: 'RCSL4', qtyAvailable: 1045, qty: 0, price: 1.03 },
   ]);
 
+  const [balance, setBalance] = useState(722.98);
+  
   const objValue = {
     showModal, setShowModal, shareSelected, setShareSelected, seeBalance, setSeeBalance,
-    shares, setShares, selectedSellOrBuy, setSelectedSellOrBuy
+    shares, setShares, selectedSellOrBuy, setSelectedSellOrBuy, balance, setBalance
   };
 
   return (
