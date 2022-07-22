@@ -18,6 +18,13 @@
         display: none;
     }
 
+    .FormArea {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
     .QtyInputs {
         align-items: center;
         display: flex;
@@ -54,6 +61,45 @@
         border: 0;
         font-size: 16px;
         padding-left: 0.8em;
+    }
+
+    .TotalTransaction {
+        align-items: center;
+        border: 1px solid #fffffe;
+        border-radius: 0.8em;
+        display: flex;
+        flex-direction: column;
+        height: 3em;
+        justify-content: center;
+        margin-top: 1em;
+        padding: 0.1em 0.6em;
+        text-align: center;
+    }
+
+    .TotalTransaction .TotalValue {
+        font-size: 12px;
+    }
+
+    #nok .TotalValue {
+        display: none;
+    }
+
+    #nok {
+        background-color: #A51C30;
+    }
+
+    #nok p {
+        background-color: #A51C30;
+        font-size: 14px;
+    }
+
+    #ok {
+        background-color: #7f5af0;
+    }
+
+    .TotalTransaction p {
+        color: #fffffe;
+        font-size: 20px;
     }
 
     .CheckoutButtons {
@@ -130,15 +176,22 @@
         padding-left: 0.8em;
     }
 
+    .FormArea {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
     .QtyInputs {
         align-items: center;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        margin-left: 4em;
         height: 12em;
     }
 
-    .QtyInputs div {
+    .QtyInputs .Inputs {
         display: flex;
     }
 
@@ -167,6 +220,39 @@
         font-size: 22px;
         padding-left: 0.8em;
         width: 14em;
+    }
+
+    .TotalTransaction {
+        align-items: center;
+        border: 1px solid #fffffe;
+        border-radius: 0.8em;
+        display: flex;
+        flex-direction: column;
+        height: 7em;
+        justify-content: center;
+        text-align: center;
+        width: 12em;
+    }
+
+    #nok {
+        background-color: #A51C30;
+    }
+
+    #nok .TotalValue {
+        display: none;
+    }
+
+    #ok {
+        background-color: #7f5af0;
+    }
+
+    .TotalTransaction .TotalValue {
+        font-size: 18px;
+    }
+
+    .TotalTransaction p {
+        color: #fffffe;
+        font-size: 35px;
     }
 
     .CheckoutButtons {
