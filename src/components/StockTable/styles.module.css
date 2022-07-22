@@ -183,6 +183,13 @@
     height: 2em;
     width: 100%;
   }
+
+  #TotalPriceColumn {
+    background-color: #337357;
+    color: white;
+    height: 2em;
+    width: 100%;
+  }
   
   #ButtonsColumn {
     align-items: center;
