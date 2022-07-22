@@ -3,12 +3,13 @@ import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAstronaut, faMoneyBillWave, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import Context from '../../context/Context';
-import xpLogo from '../../images/xp-inc-new.webp'
-import { user } from '../../helpers/infos';
+import xpLogo from '../../images/xp-inc-new.webp';
+import {getUser} from '../../helpers/localStorageSaves';
 
 function Header() {
-    const { seeBalance, setSeeBalance, balance } = useContext(Context);
+    const { seeBalance, setSeeBalance } = useContext(Context);
     const [blurId, setBlurId] = useState('blur');
+    const user = getUser();
 
 
     const handleClick = () => {
@@ -27,7 +28,7 @@ function Header() {
     const normalBalance = (
         <>
             <FontAwesomeIcon icon={faMoneyBillWave} />
-            <p>{balance.toLocaleString('pt-BR', {
+            <p>{user.balance.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL',
     })}</p>
@@ -48,7 +49,10 @@ function Header() {
             </div>
             <div className={styles.Infos}>
                 <div className={styles.User}>
-                    <p><FontAwesomeIcon icon={faUserAstronaut} /> {user.toLowerCase()}</p>
+                    <p>
+                        <FontAwesomeIcon icon={faUserAstronaut} />
+                        {user.email.toLowerCase()}
+                        </p>
                 </div>
                 <div className={styles.BalanceDiv}>
                     <button onClick={handleClick} >
