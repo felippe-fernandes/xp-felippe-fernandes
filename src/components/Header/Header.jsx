@@ -2,12 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAstronaut, faMoneyBillWave, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { getEmail } from '../../helpers/localStorageSaves';
 import Context from '../../context/Context';
 import xpLogo from '../../images/xp-inc-new.webp'
 
 function Header() {
-    const { seeBalance, setSeeBalance, balance } = useContext(Context);
+    const { seeBalance, setSeeBalance, userInfos } = useContext(Context);
     const [blurId, setBlurId] = useState('blur');
 
 
@@ -27,7 +26,7 @@ function Header() {
     const normalBalance = (
         <>
             <FontAwesomeIcon icon={faMoneyBillWave} />
-            <p>{balance.toLocaleString('pt-BR', {
+            <p>{userInfos.balance.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL',
     })}</p>
@@ -48,7 +47,7 @@ function Header() {
             </div>
             <div className={styles.Infos}>
                 <div className={styles.User}>
-                    <p><FontAwesomeIcon icon={faUserAstronaut} /> {getEmail().email.toLowerCase()}</p>
+                    <p><FontAwesomeIcon icon={faUserAstronaut} /> {userInfos.user.toLowerCase()}</p>
                 </div>
                 <div className={styles.BalanceDiv}>
                     <button onClick={handleClick} >

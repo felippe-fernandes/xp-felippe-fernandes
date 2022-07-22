@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Context from './Context';
+import { getEmail } from '../helpers/localStorageSaves';
+
 
 function Provider({ children }) {
   const [showModal, setShowModal] = useState(false);
   const [shareSelected, setShareSelected] = useState([]);
   const [seeBalance, setSeeBalance] = useState(false);
-  const [selectedSellOrBuy, setSelectedSellOrBuy] = useState('buy');
   const [shares, setShares] = useState([
     { name: 'AZUL4', qtyAvailable: 3501, qty: 52, price: 12.11 },
     { name: 'PETR4', qtyAvailable: 2578, qty: 24, price: 29.02 },
@@ -19,11 +20,28 @@ function Provider({ children }) {
     { name: 'RCSL4', qtyAvailable: 1045, qty: 0, price: 1.03 },
   ]);
 
-  const [balance, setBalance] = useState(722.98);
-  
+  const [userInfos, setUserInfo] = useState({ user: '', balance: 722.98 });
+
+
+
+  useEffect(() => {
+    const getUser = () => {
+      const user = getEmail().email.toLowerCase();
+      if (!user) {
+        localStorage.setItem('user', JSON.stringify({ email: 'teste@xpInc.com' }));
+      }
+      setUserInfo({ ...userInfos, user })
+    }
+    return () => {
+      getUser()
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userInfos.balance])
+
+
   const objValue = {
-    showModal, setShowModal, shareSelected, setShareSelected, seeBalance, setSeeBalance,
-    shares, setShares, selectedSellOrBuy, setSelectedSellOrBuy, balance, setBalance
+    showModal, setShowModal, shareSelected, setShareSelected, seeBalance, setSeeBalance, userInfos, setUserInfo,
+    shares, setShares
   };
 
   return (
