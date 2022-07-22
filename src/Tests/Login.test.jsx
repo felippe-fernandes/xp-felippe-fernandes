@@ -8,7 +8,6 @@ describe('Teste a página de Login', () => {
     renderWithRouter(<Login />);
 
     const inputs = screen.getAllByRole('textbox');
-    console.log(inputs);
     expect(inputs).toHaveLength(2);
   });
   it('Teste se o input de email possui o placeholder E-mail', () => {
