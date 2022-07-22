@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faC, faV } from '@fortawesome/free-solid-svg-icons';
 import Context from '../../context/Context';
+import { alphabeticSort } from '../../helpers/otherFunctions';
 
 function StockTable() {
     const { setShareSelected, setShowModal, shares } = useContext(Context)
@@ -13,7 +14,7 @@ function StockTable() {
     }
 
     const myShareTable = () => {
-        return shares.filter((share) => share.qty > 0).map((share) => (
+        return shares.sort(alphabeticSort).filter((share) => share.qty > 0).map((share) => (
             <tr key={share.name}>
                 <td id={styles.NameColumn}>{share.name}</td>
                 <td id={styles.QtyColumn}>{share.qty}</td>
@@ -34,7 +35,7 @@ function StockTable() {
     };
 
     const otherSharesTable = () => {
-        return shares.map((share) => (
+        return shares.sort(alphabeticSort).map((share) => (
             <tr key={share.name}>
                 <td id={styles.NameColumn}>{share.name}</td>
                 <td id={styles.QtyColumn}>{share.qtyAvailable}</td>
