@@ -28,7 +28,7 @@ function Header() {
     const normalBalance = (
         <>
             <FontAwesomeIcon icon={faMoneyBillWave} />
-            <p>{user.balance.toLocaleString('pt-BR', {
+            <p data-testid='balanceText'>{user.balance.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL',
     })}</p>
@@ -38,7 +38,7 @@ function Header() {
     const blurBalance = (
         <>
             <FontAwesomeIcon icon={faMoneyBillWave} />
-            <p>---------------------------</p>
+            <p data-testid='balanceText'>---------------------------</p>
         </>
     )
 
@@ -48,18 +48,18 @@ function Header() {
                 <img src={xpLogo} alt="XP Inc Logo" />
             </div>
             <div className={styles.Infos}>
-                <div className={styles.User}>
-                    <p>
+                <div data-testid='userInfoHeader' className={styles.User}>
+                    <p data-testid='userText'>
                         <FontAwesomeIcon icon={faUserAstronaut} />
                         {user.email.toLowerCase()}
                         </p>
                 </div>
                 <div className={styles.BalanceDiv}>
                     <button onClick={handleClick} >
-                        {seeBalance ? <FontAwesomeIcon icon={faEye} /> :
-                            <FontAwesomeIcon icon={faEyeSlash} />}
+                        {seeBalance ? <FontAwesomeIcon icon={faEye} title='blurButton'/> :
+                            <FontAwesomeIcon icon={faEyeSlash} title='blurButton' />}
                     </button>
-                    <div className={styles.Balance} id={styles[`${blurId}`]}>
+                    <div data-testid="balanceInfoHeader" className={styles.Balance} id={styles[`${blurId}`]}>
                         <>{seeBalance ? normalBalance : blurBalance}</>
                     </div>
                 </div>
