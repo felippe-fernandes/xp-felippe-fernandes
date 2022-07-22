@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FormControl, InputGroup } from 'react-bootstrap';
-import { saveEmail, saveDate } from '../../helpers/localStorageSaves.jsx';
+import { saveEmail, saveDate, saveBalance } from '../../helpers/localStorageSaves.jsx';
 import { validateEmail } from '../../helpers/LoginFunctions.jsx';
 import styles from './styles.module.css';
 import { day, hour } from '../../helpers/dateFunctions'
@@ -8,9 +8,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../images/xp-inc-new.webp'
 import { useNavigate } from 'react-router-dom';
+import Context from '../../context/Context.jsx';
 
 function Login() {
   let navigate = useNavigate();
+  const { setBalance, setUser} = useContext(Context)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [disabled, setDisabled] = useState(true);
@@ -18,6 +20,9 @@ function Login() {
   const handleClick = (e) => {
     e.preventDefault()
     saveEmail(email);
+    setUser(email)
+    setBalance(722.88)
+    saveBalance(722.88)
     saveDate(day, hour)
     navigate("/wallet");
   };
