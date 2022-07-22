@@ -1,0 +1,29 @@
+@media ( max-width : 480px ) {
+    .NotFoundPage {
+        align-items: center;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        width: 100vw;
+    }
+
+    .NotFoundPage h1 {
+        color: #fffffe;
+        font-size: 100px;
+    }
+}
+
+@media ( min-width : 481px ) {
+    .NotFoundPage {
+        align-items: center;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        width: 100vw;
+    }
+
+    .NotFoundPage h1 {
+        color: #fffffe;
+        font-size: 100px;
+    }
+}
