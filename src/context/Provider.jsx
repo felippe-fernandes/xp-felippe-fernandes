@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Context from './Context';
-import { getEmail } from '../helpers/localStorageSaves';
 
 
 function Provider({ children }) {
@@ -21,22 +20,6 @@ function Provider({ children }) {
   ]);
 
   const [userInfos, setUserInfo] = useState({ user: '', balance: 722.98 });
-
-
-
-  useEffect(() => {
-    const getUser = () => {
-      const user = getEmail().email.toLowerCase();
-      if (!user) {
-        localStorage.setItem('user', JSON.stringify({ email: 'teste@xpInc.com' }));
-      }
-      setUserInfo({ ...userInfos, user })
-    }
-    return () => {
-      getUser()
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userInfos.balance])
 
 
   const objValue = {
