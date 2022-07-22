@@ -2,8 +2,14 @@ import { fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import Login from '../pages/Login/Login';
 import renderWithRouter from './Utils/RenderWithRouter';
+import * as localStorageFunctions from '../helpers/localStorageSaves';
 
 describe('Teste a página de Login', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    jest.restoreAllMocks();
+  });
+
   it('Teste se a página possui dois inputs', () => {
     renderWithRouter(<Login />);
 
@@ -98,6 +104,30 @@ describe('Teste a página de Login', () => {
     fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc' } })
     fireEvent.change(getPasswordInput, { target: { value: '1234' } })
     expect(accessButton).toBeDisabled();
+  });
+  it('Teste se as informações são salvas no local storage', () => {
+    const spyEmail = jest.spyOn(localStorageFunctions, 'saveEmail');
+    const spyDate = jest.spyOn(localStorageFunctions, 'saveDate');
+    renderWithRouter(<Login />);
+
+    const getEmailInput = screen.getByRole('textbox', {
+      name: /email/i
+    });
+    const getPasswordInput = screen.getByRole('textbox', {
+      name: /password/i
+    });
+    const accessButton = screen.getByRole('button', {
+      name: /acessar/i
+    });
+
+    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } })
+    fireEvent.change(getPasswordInput, { target: { value: '123456' } })
+    fireEvent.click(accessButton)
+    const storedUserEmail = JSON.parse(localStorage.getItem('user')).email;
+    expect(storedUserEmail).toBe('teste@xpinc.com');
+    expect(spyDate).toBeCalled();
+    expect(spyEmail).toBeCalled();
+    
   });
   it('Teste se ao clicar no botão de acessar o usuario é redirecionado para a /wallet', () => {
     const { history } = renderWithRouter(<Login />)
