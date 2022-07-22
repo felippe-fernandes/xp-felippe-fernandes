@@ -5,6 +5,7 @@ const getUser = () => {
    if (!user) {
     localStorage.setItem('user', JSON.stringify({ email: 'teste@xpInc.com' }));
   }
+  return user
 }
 
-export const userInfos = {user: getUser()};
+export const user = getUser();

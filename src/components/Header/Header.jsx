@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAstronaut, faMoneyBillWave, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import Context from '../../context/Context';
 import xpLogo from '../../images/xp-inc-new.webp'
+import { user } from '../../helpers/infos';
 
 function Header() {
     const { seeBalance, setSeeBalance, userInfos } = useContext(Context);
@@ -47,7 +48,7 @@ function Header() {
             </div>
             <div className={styles.Infos}>
                 <div className={styles.User}>
-                    <p><FontAwesomeIcon icon={faUserAstronaut} /> {userInfos.user.toLowerCase()}</p>
+                    <p><FontAwesomeIcon icon={faUserAstronaut} /> {user.toLowerCase()}</p>
                 </div>
                 <div className={styles.BalanceDiv}>
                     <button onClick={handleClick} >
