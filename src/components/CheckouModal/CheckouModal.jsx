@@ -9,7 +9,7 @@ import { buyAndSellActions } from '../../helpers/transactionsFunctions'
 import SuccessScreen from '../SuccessScreen/SuccessScreen';
 
 function CheckouModal() {
-    const { setShowModal, shares, setShares, shareSelected, balance } = useContext(Context)
+    const { setShowModal, shares, setShares, shareSelected, balance, setBalance } = useContext(Context)
     const [confirmationScreen, setConfirmationScreen] = useState(false);
     const [confirmButtonDisable, setConfirmButtonDisable] = useState(true);
     const [buyQty, setBuyQty] = useState(0);
@@ -25,7 +25,7 @@ function CheckouModal() {
 
     const handleConfirmClick = () => {
         setConfirmationScreen(true)
-        buyAndSellActions(shares, setShares, shareSelected, sellQty, buyQty)
+        buyAndSellActions(shares, setShares, shareSelected, sellQty, buyQty, setBalance, balance)
     }
 
     useEffect(() => {
