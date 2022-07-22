@@ -67,6 +67,7 @@ function CheckouModal() {
                         placeholder="Informe a quantidade"
                         aria-label="Buy Input"
                         type='number'
+                        disabled={sellQty > 0}
                     />
                 </InputGroup>
                 <InputGroup className={styles.Inputs}>
@@ -76,7 +77,7 @@ function CheckouModal() {
                         placeholder="Informe a quantidade"
                         aria-label="Sell Input"
                         type='number'
-                        disabled={shareSelected.qty === 0}
+                        disabled={shareSelected.qty === 0 || buyQty > 0}
                     />
                 </InputGroup>
             </div>
