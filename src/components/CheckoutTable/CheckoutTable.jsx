@@ -8,7 +8,7 @@ function CheckoutTable() {
 
     return (
         <div className={styles.CheckoutTableComponent}>
-            <table className={styles.Table}>
+            <table className={styles.Table} data-testid='CheckoutTable'>
                 <tbody>
                     <tr className={styles.TableSubHeaderRow}>
                         <td className={styles.TableSubHeaderData}>Ação</td>

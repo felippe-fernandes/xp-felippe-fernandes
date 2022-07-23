@@ -52,7 +52,7 @@ function CheckouModal() {
             <div className={styles.Header}>
                 <div className={styles.Title}>
                     <h1>Comprar/Vender Ação</h1>
-                    <button onClick={handleCloseClick} id={styles.ExitButton}>
+                    <button onClick={handleCloseClick} id={styles.ExitButton} data-testid='closeModalButton'>
                         <FontAwesomeIcon icon={faXmarkSquare} />
                     </button>
                 </div>
