@@ -50,7 +50,6 @@ describe('Teste o componente CheckoutModal', () => {
     await accessModal();
 
     const dataRow = screen.getAllByRole('row')[1];
-    console.log(dataRow);
     expect(dataRow).toBeInTheDocument();
   });
   it('Teste se existe dois inputs', async () => {
@@ -99,7 +98,7 @@ describe('Teste o componente CheckoutModal', () => {
     fireEvent.change(getInputs[1], { target: { value: 0 } });
     expect(confirmButton).toBeDisabled();
   });
-  it('Teste se ao clicar no botão confirmar após uma compra a função é chamada corretamente', async () => {
+  it('Teste se ao clicar no botão confirmar a função é chamada corretamente', async () => {
     const spyBuyAndSellActions = jest.spyOn(
       transactionsFunctions,
       'buyAndSellActions',
@@ -113,23 +112,6 @@ describe('Teste o componente CheckoutModal', () => {
     });
 
     fireEvent.change(buyInput, { target: { value: 1 } });
-    fireEvent.click(confirmButton);
-    expect(spyBuyAndSellActions).toBeCalled();
-  });
-  it('Teste se ao clicar no botão confirmar após uma venda a função é chamada corretamente', async () => {
-    const spyBuyAndSellActions = jest.spyOn(
-      transactionsFunctions,
-      'buyAndSellActions',
-    );
-    renderWithRouter(<Wallet />);
-    await accessModal();
-
-    const sellInput = screen.getAllByRole('spinbutton')[1];
-    const confirmButton = screen.getByRole('button', {
-      name: /confirmar/i,
-    });
-
-    fireEvent.change(sellInput, { target: { value: 1 } });
     fireEvent.click(confirmButton);
     expect(spyBuyAndSellActions).toBeCalled();
   });

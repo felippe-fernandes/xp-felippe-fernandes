@@ -29,7 +29,6 @@ describe('Teste a página de Wallet', () => {
     const getNumberOfRows = screen.getAllByTestId('tableRow').length;
     const buyButton = screen.getAllByTestId('buyButton');
     const sellButton = screen.getAllByTestId('sellButton');
-    console.log(getNumberOfRows);
     expect(buyButton && sellButton).toHaveLength(getNumberOfRows);
   });
   it('Teste se ao clicar em um dos botões da coluna Negotiate o Modal é aberto', () => {
