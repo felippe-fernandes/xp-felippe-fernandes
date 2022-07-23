@@ -59,12 +59,8 @@ function Header() {
       </div>
       <div className={styles.Infos} data-testid='userInfos'>
         <div data-testid='userInfoHeader' className={styles.User}>
-          {/* <p data-testid='userText'>
-            <FontAwesomeIcon icon={faUserAstronaut} />
-            {user.email.toLowerCase()}
-          </p> */}
-        </div>
         <DropdownMenu />
+        </div>
         <div className={styles.BalanceDiv}>
           <button onClick={handleClick}>
             {seeBalance ? (

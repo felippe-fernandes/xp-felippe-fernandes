@@ -1,3 +1,6 @@
+/* eslint-disable testing-library/prefer-screen-queries */
+/* eslint-disable no-undef */
+/* eslint-disable testing-library/no-node-access */
 import { fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import Header from '../components/Header/Header';
@@ -46,22 +49,5 @@ describe('Teste o componente Header', () => {
     fireEvent.click(blurButton);
 
     expect(balanceInfoHeader.getAttribute('id')).not.toBe('blur');
-  });
-
-  it('Teste se é ao clicar em Logout é redirecionado para /', () => {
-    const { history } = renderWithRouter(<Header />);
-
-    const storedUserEmail = JSON.parse(localStorage.getItem('user')).email;
-    const userText = screen.getByText(storedUserEmail);
-    const logoutButton = screen.getByText(/logout/i);
-
-    fireEvent.click(userText);
-    fireEvent.click(logoutButton);
-
-    const storedUser = JSON.parse(localStorage.getItem('user'));
-    const storedDate = JSON.parse(localStorage.getItem('date'));
-    expect(storedUser).toBeFalsy();
-    expect(storedDate).toBeFalsy();
-    expect(history.location.pathname).toBe('/');
   });
 });

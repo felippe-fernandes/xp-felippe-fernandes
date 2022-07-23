@@ -16,7 +16,7 @@ function DropdownMenu() {
   const handleChage = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('date');
-    navigate('/')
+    navigate('/');
   };
 
   const options = [
@@ -49,6 +49,7 @@ function DropdownMenu() {
       isSearchable={false}
       hideSelectedOptions
       onChange={handleChage}
+      closeMenuOnScroll
     />
   );
 }
