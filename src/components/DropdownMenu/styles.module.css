@@ -1,0 +1,132 @@
+@media (max-width: 480px) {
+  .Select [class$='-control'] {
+    background-color: #7f5af0;
+    border-radius: 0.5em;
+    height: 1em;
+  }
+
+  .Select [class$='-control'] [class$='-indicatorContainer'] {
+    color: white;
+    padding: 0 0.4em 0 0.4em;
+  }
+
+  .Select [class$='-control'] [class$='-indicatorSeparator'] {
+    display: none;
+  }
+  .Select [class$='-control'] [class$='-ValueContainer'] {
+    padding: 2px 0;
+  }
+
+  .Select [class$='-singleValue'] {
+    align-items: center;
+    color: #fffffe;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Select [class$='-singleValue'] span {
+    font-size: 14px;
+  }
+
+  .Select [class$='-singleValue'] svg {
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+  }
+
+  .Select [class$='-menu'] {
+    border-radius: 0.5em 0.5em;
+    margin-top: 0;
+  }
+
+  .Select [class$='-MenuList'] {
+    background-color: white;
+    border-radius: 0.5em 0.5em;
+  }
+  .Select [class$='-option'] {
+    align-items: center;
+    background-color: transparent;
+    color: #7f5af0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Select [class$='-option'] span {
+    font-size: 14px;
+  }
+
+  .Select [class$='-option'] svg {
+    margin-left: 1em;
+  }
+
+  .Select [class$='-option']:hover {
+    background-color: #7f5af0;
+    color: #fffffe;
+  }
+}
+
+@media (min-width: 481px) {
+  .Select [class$='-control'] {
+    background-color: #7f5af0;
+    border-radius: 0.5em;
+    font-size: 22px;
+    height: 2em;
+    width: 18em;
+  }
+
+  .Select [class$='-control'] [class$='-indicatorContainer'] {
+    color: white;
+    padding-right: 1em;
+  }
+
+  .Select [class$='-control'] [class$='-indicatorSeparator'] {
+    display: none;
+  }
+
+  .Select [class$='-singleValue'] {
+    align-items: center;
+    color: #fffffe;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Select [class$='-singleValue'] span {
+    font-size: 22px;
+  }
+
+  .Select [class$='-singleValue'] svg {
+    font-size: 22px;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .Select [class$='-menu'] {
+    border-radius: 0.5em 0.5em;
+    margin-top: 0;
+  }
+
+  .Select [class$='-MenuList'] {
+    background-color: white;
+    border-radius: 0.5em 0.5em;
+  }
+  .Select [class$='-option'] {
+    align-items: center;
+    background-color: transparent;
+    color: #7f5af0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Select [class$='-option'] span {
+    font-size: 22px;
+  }
+
+  .Select [class$='-option'] svg {
+    font-size: 22px;
+    margin-left: 1em;
+  }
+
+  .Select [class$='-option']:hover {
+    background-color: #7f5af0;
+    color: #fffffe;
+  }
+}

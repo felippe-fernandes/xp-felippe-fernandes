@@ -11,6 +11,7 @@ import Context from '../../context/Context';
 import xpLogo from '../../images/xp-inc-new.webp';
 import { getUser } from '../../helpers/localStorageSaves';
 import { useNavigate } from 'react-router-dom';
+import DropdownMenu from '../DropdownMenu/DropdownMenu';
 
 function Header() {
   const { seeBalance, setSeeBalance } = useContext(Context);
@@ -55,15 +56,16 @@ function Header() {
   return (
     <div className={styles.HeaderComponent}>
       <div className={styles.Logo} onClick={() => navigate('/wallet')}>
-        <img src={xpLogo} alt='XP Inc Logo'/>
+        <img src={xpLogo} alt='XP Inc Logo' />
       </div>
       <div className={styles.Infos}>
-        <div data-testid='userInfoHeader' className={styles.User}>
+        {/* <div data-testid='userInfoHeader' className={styles.User}>
           <p data-testid='userText'>
             <FontAwesomeIcon icon={faUserAstronaut} />
             {user.email.toLowerCase()}
-          </p>
-        </div>
+          </p> 
+        </div>*/}
+        <DropdownMenu />
         <div className={styles.BalanceDiv}>
           <button onClick={handleClick}>
             {seeBalance ? (
