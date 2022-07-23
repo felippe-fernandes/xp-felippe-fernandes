@@ -20,8 +20,8 @@ describe('Teste o componente Header', () => {
     renderWithRouter(<Header />);
     const storedUserEmail = JSON.parse(localStorage.getItem('user')).email;
 
-    const userText = screen.getByTestId('userText');
-    expect(userText).toContainHTML(storedUserEmail);
+    const userText = screen.getByText(storedUserEmail);
+    expect(userText).toBeInTheDocument();
   });
   it('Teste se a balanceInfo possui o mesmo balance do localStorage', () => {
     renderWithRouter(<Header />);
@@ -46,5 +46,22 @@ describe('Teste o componente Header', () => {
     fireEvent.click(blurButton);
 
     expect(balanceInfoHeader.getAttribute('id')).not.toBe('blur');
+  });
+
+  it('Teste se é ao clicar em Logout é redirecionado para /', () => {
+    const { history } = renderWithRouter(<Header />);
+
+    const storedUserEmail = JSON.parse(localStorage.getItem('user')).email;
+    const userText = screen.getByText(storedUserEmail);
+    const logoutButton = screen.getByText(/logout/i);
+
+    fireEvent.click(userText);
+    fireEvent.click(logoutButton);
+
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    const storedDate = JSON.parse(localStorage.getItem('date'));
+    expect(storedUser).toBeFalsy();
+    expect(storedDate).toBeFalsy();
+    expect(history.location.pathname).toBe('/');
   });
 });

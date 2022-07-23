@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faUserAstronaut,
   faMoneyBillWave,
   faEye,
   faEyeSlash,
@@ -58,13 +57,13 @@ function Header() {
       <div className={styles.Logo} onClick={() => navigate('/wallet')}>
         <img src={xpLogo} alt='XP Inc Logo' />
       </div>
-      <div className={styles.Infos}>
-        {/* <div data-testid='userInfoHeader' className={styles.User}>
-          <p data-testid='userText'>
+      <div className={styles.Infos} data-testid='userInfos'>
+        <div data-testid='userInfoHeader' className={styles.User}>
+          {/* <p data-testid='userText'>
             <FontAwesomeIcon icon={faUserAstronaut} />
             {user.email.toLowerCase()}
-          </p> 
-        </div>*/}
+          </p> */}
+        </div>
         <DropdownMenu />
         <div className={styles.BalanceDiv}>
           <button onClick={handleClick}>

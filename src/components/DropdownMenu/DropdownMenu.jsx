@@ -49,6 +49,7 @@ function DropdownMenu() {
       isSearchable={false}
       hideSelectedOptions
       onChange={handleChage}
+      menuIsOpen
     />
   );
 }
