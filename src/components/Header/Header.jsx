@@ -10,11 +10,13 @@ import {
 import Context from '../../context/Context';
 import xpLogo from '../../images/xp-inc-new.webp';
 import { getUser } from '../../helpers/localStorageSaves';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const { seeBalance, setSeeBalance } = useContext(Context);
   const [blurId, setBlurId] = useState('blur');
   const user = getUser();
+  let navigate = useNavigate();
 
   const handleClick = () => {
     setSeeBalance(!seeBalance);
@@ -52,8 +54,8 @@ function Header() {
 
   return (
     <div className={styles.HeaderComponent}>
-      <div className={styles.Logo}>
-        <img src={xpLogo} alt='XP Inc Logo' />
+      <div className={styles.Logo} onClick={() => navigate('/wallet')}>
+        <img src={xpLogo} alt='XP Inc Logo'/>
       </div>
       <div className={styles.Infos}>
         <div data-testid='userInfoHeader' className={styles.User}>
