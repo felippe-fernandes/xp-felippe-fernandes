@@ -33,7 +33,7 @@
     
     .Animation {
         margin-bottom: 1em;
-        width: 15em;
+        width: 25em;
     }
 
     .SuccessScreen #OkButton {
@@ -62,7 +62,7 @@
         display: flex;
         margin-top: 2em;
         position: fixed;
-        right: 5em;
+        right: 7em;
     }
 
     .SuccessScreen {
@@ -84,7 +84,7 @@
     
     .Animation {
         margin-bottom: 1em;
-        width: 15em;
+        width: 25em;
     }
 
     .SuccessScreen #OkButton {

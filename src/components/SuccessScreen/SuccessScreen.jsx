@@ -18,7 +18,7 @@ function SuccessScreen() {
 
   return (
     <div data-testid='successScreen' className={styles.SuccessScreenComponent}>
-      <button id={styles.ExitButton} onClick={handleClick}>
+      <button id={styles.ExitButton} onClick={handleClick} data-testid='closeModalButton'>
         <FontAwesomeIcon icon={faRectangleXmark} size="xl" />
       </button>
       <div className={styles.SuccessScreen}>
