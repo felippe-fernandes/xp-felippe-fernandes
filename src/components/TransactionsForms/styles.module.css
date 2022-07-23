@@ -140,7 +140,6 @@
     flex-direction: column;
     height: 100%;
     justify-content: space-evenly;
-    margin-top: 5em;
   }
 
   .SuccessScreen h1 {
