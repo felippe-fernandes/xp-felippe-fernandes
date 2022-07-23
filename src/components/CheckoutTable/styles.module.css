@@ -1,149 +1,149 @@
-@media ( max-width : 480px ){
-    .CheckoutTableComponent {
-        width: 100%;
-    }
-    
-    .Table {
-        border-collapse: collapse;
-        border-spacing: 0;
-        display: flex;
-        text-align: center;
-        width: 100%;
-    }
+@media (max-width: 480px) {
+  .CheckoutTableComponent {
+    width: 100%;
+  }
 
-    .Table tbody {
-        width: 100%;
-    }
-    
-    .Table .TableSubHeaderRow {
-        background-color: #fffffe;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 1em;
-        width: 100%;
-    }
-  
-    .Table .TableSubHeaderData {
-        align-items: center;
-        background-color: #fffffe;
-        border-radius: 0.4em;
-        display: flex;
-        font-size: 16px;
-        font-weight: 400;
-        justify-content: center;
-        margin: 0.5em 0 0.5em 0;
-        width: 5em;
-    }
-  
-    .Table tr{
-        display: flex;
-        justify-content: space-around;
-    }
+  .Table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: flex;
+    text-align: center;
+    width: 100%;
+  }
 
-    .Table tbody td {
-        border-radius: 0.4em;
-        font-size: 18px;
-        margin: 0;
-        overflow: hidden;
-        text-align: center;
-        vertical-align: middle;
-        word-break: normal;
-    }
-  
-    #NameColumn {
-        background-color: #ffc000;
-        width: 5em;
-    }
-  
-    #QtyColumn {
-        background-color: #595959;
-        color: white;
-        width: 5em;
-    }
+  .Table tbody {
+    width: 100%;
+  }
 
-    #TotalQtyColumn {
-        background-color: #337357;
-        color: white;
-        width: 5em;
-    }
-  
-    #PriceColumn {
-        background-color: black;
-        color: white;
-        width: 5em;
-    }
+  .Table .TableSubHeaderRow {
+    background-color: #fffffe;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1em;
+    width: 100%;
+  }
+
+  .Table .TableSubHeaderData {
+    align-items: center;
+    background-color: #fffffe;
+    border-radius: 0.4em;
+    display: flex;
+    font-size: 16px;
+    font-weight: 400;
+    justify-content: center;
+    margin: 0.5em 0 0.5em 0;
+    width: 5em;
+  }
+
+  .Table tr {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .Table tbody td {
+    border-radius: 0.4em;
+    font-size: 18px;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    word-break: normal;
+  }
+
+  #NameColumn {
+    background-color: #ffc000;
+    width: 5em;
+  }
+
+  #QtyColumn {
+    background-color: #595959;
+    color: white;
+    width: 5em;
+  }
+
+  #TotalQtyColumn {
+    background-color: #337357;
+    color: white;
+    width: 5em;
+  }
+
+  #PriceColumn {
+    background-color: black;
+    color: white;
+    width: 5em;
+  }
 }
 
-@media ( min-width : 481px ){
-    .CheckoutTableComponent {
-        width: 100%;
-    }
-    
-    .Table {
-        border-collapse: collapse;
-        border-spacing: 0;
-        display: flex;
-        text-align: center;
-        width: 100%;
-    }
+@media (min-width: 481px) {
+  .CheckoutTableComponent {
+    width: 100%;
+  }
 
-    .Table tbody {
-        width: 100%;
-    }
-    
-    .Table .TableSubHeaderRow {
-        background-color: #fffffe;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-    }
-  
-    .Table .TableSubHeaderData {
-        align-items: center;
-        background-color: #fffffe;
-        display: flex;
-        font-size: 26px;
-        font-weight: 400;
-        justify-content: center;
-        width: 7em;
-    }
-  
-    .Table tr{
-        display: flex;
-        justify-content: space-around;
-    }
+  .Table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: flex;
+    text-align: center;
+    width: 100%;
+  }
 
-    .Table tbody td {
-        border: 1px solid #fffffe;
-        font-size: 24px;
-        overflow: hidden;
-        text-align: center;
-        vertical-align: middle;
-        word-break: normal;
-    }
-  
-    #NameColumn {
-        background-color: #ffc000;
-        width: 100%;
-    }
-  
-    #QtyColumn {
-        background-color: #595959;
-        color: white;
-        width: 100%;
-    }
+  .Table tbody {
+    width: 100%;
+  }
 
-    #TotalQtyColumn {
-        background-color: #337357;
-        color: white;
-        width: 100%;
-    }
-  
-    #PriceColumn {
-        background-color: black;
-        color: white;
-        width: 100%;
-    }
+  .Table .TableSubHeaderRow {
+    background-color: #fffffe;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .Table .TableSubHeaderData {
+    align-items: center;
+    background-color: #fffffe;
+    display: flex;
+    font-size: 26px;
+    font-weight: 400;
+    justify-content: center;
+    width: 7em;
+  }
+
+  .Table tr {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .Table tbody td {
+    border: 1px solid #fffffe;
+    font-size: 24px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    word-break: normal;
+  }
+
+  #NameColumn {
+    background-color: #ffc000;
+    width: 100%;
+  }
+
+  #QtyColumn {
+    background-color: #595959;
+    color: white;
+    width: 100%;
+  }
+
+  #TotalQtyColumn {
+    background-color: #337357;
+    color: white;
+    width: 100%;
+  }
+
+  #PriceColumn {
+    background-color: black;
+    color: white;
+    width: 100%;
+  }
 }

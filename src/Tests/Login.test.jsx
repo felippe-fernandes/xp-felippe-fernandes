@@ -20,7 +20,7 @@ describe('Teste a página de Login', () => {
     renderWithRouter(<Login />);
 
     const getEmailInput = screen.getByRole('textbox', {
-      name: /email/i
+      name: /email/i,
     });
     const emailInputPlaceholder = getEmailInput.getAttribute('placeholder');
 
@@ -30,9 +30,10 @@ describe('Teste a página de Login', () => {
     renderWithRouter(<Login />);
 
     const getPasswordInput = screen.getByRole('textbox', {
-      name: /password/i
+      name: /password/i,
     });
-    const passwordInputPlaceholder = getPasswordInput.getAttribute('placeholder');
+    const passwordInputPlaceholder =
+      getPasswordInput.getAttribute('placeholder');
 
     expect(passwordInputPlaceholder).toBe('Senha');
   });
@@ -48,7 +49,7 @@ describe('Teste a página de Login', () => {
     renderWithRouter(<Login />);
 
     const accessButton = screen.getByRole('button', {
-      name: /acessar/i
+      name: /acessar/i,
     });
 
     expect(accessButton).toBeInTheDocument();
@@ -57,7 +58,7 @@ describe('Teste a página de Login', () => {
     renderWithRouter(<Login />);
 
     const accessButton = screen.getByRole('button', {
-      name: /acessar/i
+      name: /acessar/i,
     });
 
     expect(accessButton).toBeDisabled();
@@ -66,17 +67,17 @@ describe('Teste a página de Login', () => {
     renderWithRouter(<Login />);
 
     const getEmailInput = screen.getByRole('textbox', {
-      name: /email/i
+      name: /email/i,
     });
     const getPasswordInput = screen.getByRole('textbox', {
-      name: /password/i
+      name: /password/i,
     });
     const accessButton = screen.getByRole('button', {
-      name: /acessar/i
+      name: /acessar/i,
     });
 
-    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } })
-    fireEvent.change(getPasswordInput, { target: { value: '123456' } })
+    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } });
+    fireEvent.change(getPasswordInput, { target: { value: '123456' } });
 
     expect(accessButton).toBeEnabled();
   });
@@ -84,25 +85,25 @@ describe('Teste a página de Login', () => {
     renderWithRouter(<Login />);
 
     const getEmailInput = screen.getByRole('textbox', {
-      name: /email/i
+      name: /email/i,
     });
     const getPasswordInput = screen.getByRole('textbox', {
-      name: /password/i
+      name: /password/i,
     });
     const accessButton = screen.getByRole('button', {
-      name: /acessar/i
+      name: /acessar/i,
     });
 
-    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc' } })
-    fireEvent.change(getPasswordInput, { target: { value: '123456' } })
+    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc' } });
+    fireEvent.change(getPasswordInput, { target: { value: '123456' } });
     expect(accessButton).toBeDisabled();
 
-    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } })
-    fireEvent.change(getPasswordInput, { target: { value: '1234' } })
+    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } });
+    fireEvent.change(getPasswordInput, { target: { value: '1234' } });
     expect(accessButton).toBeDisabled();
 
-    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc' } })
-    fireEvent.change(getPasswordInput, { target: { value: '1234' } })
+    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc' } });
+    fireEvent.change(getPasswordInput, { target: { value: '1234' } });
     expect(accessButton).toBeDisabled();
   });
   it('Teste se as informações são salvas no local storage', () => {
@@ -111,40 +112,39 @@ describe('Teste a página de Login', () => {
     renderWithRouter(<Login />);
 
     const getEmailInput = screen.getByRole('textbox', {
-      name: /email/i
+      name: /email/i,
     });
     const getPasswordInput = screen.getByRole('textbox', {
-      name: /password/i
+      name: /password/i,
     });
     const accessButton = screen.getByRole('button', {
-      name: /acessar/i
+      name: /acessar/i,
     });
 
-    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } })
-    fireEvent.change(getPasswordInput, { target: { value: '123456' } })
-    fireEvent.click(accessButton)
+    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } });
+    fireEvent.change(getPasswordInput, { target: { value: '123456' } });
+    fireEvent.click(accessButton);
     const storedUserEmail = JSON.parse(localStorage.getItem('user')).email;
     expect(storedUserEmail).toBe('teste@xpinc.com');
     expect(spyDate).toBeCalled();
     expect(spyEmail).toBeCalled();
-    
   });
   it('Teste se ao clicar no botão de acessar o usuario é redirecionado para a /wallet', () => {
-    const { history } = renderWithRouter(<Login />)
+    const { history } = renderWithRouter(<Login />);
 
     const getEmailInput = screen.getByRole('textbox', {
-      name: /email/i
+      name: /email/i,
     });
     const getPasswordInput = screen.getByRole('textbox', {
-      name: /password/i
+      name: /password/i,
     });
     const accessButton = screen.getByRole('button', {
-      name: /acessar/i
+      name: /acessar/i,
     });
 
-    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } })
-    fireEvent.change(getPasswordInput, { target: { value: '123456' } })
-    fireEvent.click(accessButton)
-    expect(history.location.pathname).toBe('/wallet')
+    fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } });
+    fireEvent.change(getPasswordInput, { target: { value: '123456' } });
+    fireEvent.click(accessButton);
+    expect(history.location.pathname).toBe('/wallet');
   });
 });

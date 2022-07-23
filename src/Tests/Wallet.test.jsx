@@ -1,4 +1,4 @@
-import { fireEvent, screen, } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import Wallet from '../pages/Wallet/Wallet';
 import renderWithRouter from './Utils/RenderWithRouter';
@@ -19,43 +19,43 @@ describe('Teste a página de Wallet', () => {
   it('Teste se existe uma coluna de botões em cada linha', () => {
     renderWithRouter(<Wallet />);
 
-    const getTableRows = screen.getAllByTestId('tableRow').length
-    const buttonColumn = screen.getAllByTestId('buttonColumn').length
-    expect(buttonColumn).toBe(getTableRows)
+    const getTableRows = screen.getAllByTestId('tableRow').length;
+    const buttonColumn = screen.getAllByTestId('buttonColumn').length;
+    expect(buttonColumn).toBe(getTableRows);
   });
   it('Teste se existem dois botões na coluna Negociar', () => {
     renderWithRouter(<Wallet />);
 
-    const getNumberOfRows = screen.getAllByTestId('tableRow').length
-    const buyButton = screen.getAllByTestId('buyButton')
-    const sellButton = screen.getAllByTestId('sellButton')
+    const getNumberOfRows = screen.getAllByTestId('tableRow').length;
+    const buyButton = screen.getAllByTestId('buyButton');
+    const sellButton = screen.getAllByTestId('sellButton');
     console.log(getNumberOfRows);
-    expect(buyButton && sellButton).toHaveLength(getNumberOfRows)
-  })
+    expect(buyButton && sellButton).toHaveLength(getNumberOfRows);
+  });
   it('Teste se ao clicar em um dos botões da coluna Negotiate o Modal é aberto', () => {
-    renderWithRouter(<Wallet />)
+    renderWithRouter(<Wallet />);
 
     const getNumberOfRows = screen.getAllByTestId('tableRow').length;
-    const buyButton = screen.getAllByTestId('buyButton')
-    fireEvent.click(buyButton[Math.floor(Math.random() * getNumberOfRows)])
-    expect(document.body).toHaveClass('ReactModal__Body--open')
+    const buyButton = screen.getAllByTestId('buyButton');
+    fireEvent.click(buyButton[Math.floor(Math.random() * getNumberOfRows)]);
+    expect(document.body).toHaveClass('ReactModal__Body--open');
   });
   it('Teste se existe o botão de Depósito/Retirada', () => {
-    renderWithRouter(<Wallet />)
+    renderWithRouter(<Wallet />);
 
     const getDepositAndWithDrawalButton = screen.getByRole('button', {
-      name: /depósito\/retirada/i
-    })
+      name: /depósito\/retirada/i,
+    });
     expect(getDepositAndWithDrawalButton).toBeInTheDocument();
   });
   it('Teste se ao clicar no botão de Depósito/Retirada o usuario é redirecionado para a /payment', () => {
-    const { history } = renderWithRouter(<Wallet />)
+    const { history } = renderWithRouter(<Wallet />);
 
     const getDepositAndWithDrawalButton = screen.getByRole('button', {
-      name: /depósito\/retirada/i
-    })
+      name: /depósito\/retirada/i,
+    });
 
-    fireEvent.click(getDepositAndWithDrawalButton)
-    expect(history.location.pathname).toBe('/payment')
+    fireEvent.click(getDepositAndWithDrawalButton);
+    expect(history.location.pathname).toBe('/payment');
   });
 });

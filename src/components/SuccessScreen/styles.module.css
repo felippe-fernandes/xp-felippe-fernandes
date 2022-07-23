@@ -1,102 +1,102 @@
-@media ( max-width : 480px ){
-    .SuccessScreenComponent {
-        height: 100%
-    }
+@media (max-width: 480px) {
+  .SuccessScreenComponent {
+    height: 100%;
+  }
 
-    .SuccessScreenComponent #ExitButton {
-        background-color: #7f5af0;
-        border: 0;
-        border-radius: 0.8em;
-        color: #fffffe;
-        display: flex;
-        margin-top: 2em;
-        position: fixed;
-        right: 5em;
-    }
+  .SuccessScreenComponent #ExitButton {
+    background-color: #7f5af0;
+    border: 0;
+    border-radius: 0.8em;
+    color: #fffffe;
+    display: flex;
+    margin-top: 2em;
+    position: fixed;
+    right: 5em;
+  }
 
-    .SuccessScreen {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        justify-content: space-evenly;
-    }
+  .SuccessScreen {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+  }
 
-    .SuccessScreen h1 {
-        color: white;
-        text-align: center;
-    }
+  .SuccessScreen h1 {
+    color: white;
+    text-align: center;
+  }
 
-    .SuccessScreen img {
-        width: 15em;
-    }
-    
-    .Animation {
-        margin-bottom: 1em;
-        width: 25em;
-    }
+  .SuccessScreen img {
+    width: 15em;
+  }
 
-    .SuccessScreen #OkButton {
-        align-items: center;
-        background-color: #7f5af0;
-        border: 0;
-        border-radius: 0.8em;
-        color: #fffffe;
-        display: flex;
-        height: 2em;
-        justify-content: center;
-        width: 3em;
-    }
+  .Animation {
+    margin-bottom: 1em;
+    width: 25em;
+  }
+
+  .SuccessScreen #OkButton {
+    align-items: center;
+    background-color: #7f5af0;
+    border: 0;
+    border-radius: 0.8em;
+    color: #fffffe;
+    display: flex;
+    height: 2em;
+    justify-content: center;
+    width: 3em;
+  }
 }
 
-@media ( min-width : 481px ){
-    .SuccessScreenComponent {
-        height: 100%
-    }
+@media (min-width: 481px) {
+  .SuccessScreenComponent {
+    height: 100%;
+  }
 
-    .SuccessScreenComponent #ExitButton {
-        background-color: #7f5af0;
-        border: 0;
-        border-radius: 0.8em;
-        color: #fffffe;
-        display: flex;
-        margin-top: 2em;
-        position: fixed;
-        right: 7em;
-    }
+  .SuccessScreenComponent #ExitButton {
+    background-color: #7f5af0;
+    border: 0;
+    border-radius: 0.8em;
+    color: #fffffe;
+    display: flex;
+    margin-top: 2em;
+    position: fixed;
+    right: 7em;
+  }
 
-    .SuccessScreen {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        justify-content: space-evenly;
-    }
+  .SuccessScreen {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+  }
 
-    .SuccessScreen h1 {
-        color: white;
-        text-align: center;
-    }
+  .SuccessScreen h1 {
+    color: white;
+    text-align: center;
+  }
 
-    .SuccessScreen img {
-        width: 15em;
-    }
-    
-    .Animation {
-        margin-bottom: 1em;
-        width: 25em;
-    }
+  .SuccessScreen img {
+    width: 15em;
+  }
 
-    .SuccessScreen #OkButton {
-        align-items: center;
-        background-color: #7f5af0;
-        border: 0;
-        border-radius: 0.8em;
-        color: #fffffe;
-        display: flex;
-        font-size: 18px;
-        height: 2em;
-        justify-content: center;
-        width: 10em;
-    }
+  .Animation {
+    margin-bottom: 1em;
+    width: 25em;
+  }
+
+  .SuccessScreen #OkButton {
+    align-items: center;
+    background-color: #7f5af0;
+    border: 0;
+    border-radius: 0.8em;
+    color: #fffffe;
+    display: flex;
+    font-size: 18px;
+    height: 2em;
+    justify-content: center;
+    width: 10em;
+  }
 }

@@ -1,34 +1,34 @@
-import { fireEvent, screen } from "@testing-library/react";
-import React from "react";
-import SuccessScren from "../components/SuccessScreen/SuccessScreen";
-import renderWithRouter from "./Utils/RenderWithRouter";
+import { fireEvent, screen } from '@testing-library/react';
+import React from 'react';
+import SuccessScren from '../components/SuccessScreen/SuccessScreen';
+import renderWithRouter from './Utils/RenderWithRouter';
 
-describe("Teste o componente SuccessScreen", () => {
-  it("Teste se a página possui um titulo", () => {
+describe('Teste o componente SuccessScreen', () => {
+  it('Teste se a página possui um titulo', () => {
     renderWithRouter(<SuccessScren />);
 
-    const successScreenTitle = screen.getByRole("heading", {
+    const successScreenTitle = screen.getByRole('heading', {
       name: /processo realizado com sucesso!/i,
     });
     expect(successScreenTitle).toBeInTheDocument();
   });
-  it("Teste se a página possui um dois botões", () => {
+  it('Teste se a página possui um dois botões', () => {
     renderWithRouter(<SuccessScren />);
 
-    const successScreenButtons = screen.getAllByRole("button");
+    const successScreenButtons = screen.getAllByRole('button');
     expect(successScreenButtons).toHaveLength(2);
   });
-  it("Teste se ao clicar no botão fechar (x) ou no botão OK, o modal é fechado", () => {
+  it('Teste se ao clicar no botão fechar (x) ou no botão OK, o modal é fechado', () => {
     renderWithRouter(<SuccessScren />);
 
-    const successScreenButtons = screen.getByRole("button", {
+    const successScreenButtons = screen.getByRole('button', {
       name: /ok/i,
     });
-    const closeButton = screen.getByTestId("closeModalButton");
+    const closeButton = screen.getByTestId('closeModalButton');
 
     fireEvent.click(successScreenButtons);
-    expect(document.body).not.toHaveClass("ReactModal__Body--open");
+    expect(document.body).not.toHaveClass('ReactModal__Body--open');
     fireEvent.click(closeButton);
-    expect(document.body).not.toHaveClass("ReactModal__Body--open");
+    expect(document.body).not.toHaveClass('ReactModal__Body--open');
   });
 });

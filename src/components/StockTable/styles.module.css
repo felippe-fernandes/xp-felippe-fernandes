@@ -1,4 +1,4 @@
-@media ( max-width : 480px ){
+@media (max-width: 480px) {
   .Table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -25,7 +25,7 @@
     padding-left: 0.5em;
     width: 100%;
   }
-  
+
   .Table .TableSubHeaderRow {
     box-sizing: border-box;
     display: flex;
@@ -45,7 +45,7 @@
     width: 5em;
   }
 
-  .Table tr{
+  .Table tr {
     display: flex;
     justify-content: space-evenly;
     padding: 0.1em;
@@ -56,26 +56,26 @@
     background-color: #ffc000;
     width: 5em;
   }
-  
+
   #QtyColumn {
     background-color: #595959;
     color: white;
     width: 5em;
   }
-  
+
   #PriceColumn {
     background-color: black;
     color: white;
     width: 5em;
   }
-  
+
   #TotalPriceColumn {
     background-color: #337357;
     color: white;
     height: 2em;
     width: 5.26em;
   }
-  
+
   #ButtonsColumn {
     align-items: center;
     display: flex;
@@ -84,14 +84,14 @@
 
   #BuyButton {
     align-items: center;
-    background-color: #4059AD;
+    background-color: #4059ad;
     display: flex;
     justify-content: center;
   }
 
   #SellButton {
     align-items: center;
-    background-color: #6EEB83;
+    background-color: #6eeb83;
     display: flex;
     justify-content: center;
   }
@@ -102,7 +102,7 @@
     display: flex;
     justify-content: center;
   }
-  
+
   .Table tbody td {
     align-items: center;
     border-radius: 0.4em;
@@ -112,7 +112,7 @@
     margin: 0;
     width: 4.5em;
   }
-  
+
   .Table td button {
     border: 0;
     border-radius: 100%;
@@ -123,7 +123,7 @@
   }
 }
 
-@media ( min-width : 481px ){
+@media (min-width: 481px) {
   .Table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -151,7 +151,7 @@
     text-align: start;
     width: 100%;
   }
-  
+
   .Table .TableSubHeaderRow {
     background-color: #fffffe;
     border: 0;
@@ -169,7 +169,7 @@
     width: 100%;
   }
 
-  .Table tr{
+  .Table tr {
     border: 1px solid white;
     display: flex;
     justify-content: space-evenly;
@@ -181,14 +181,14 @@
     height: 2em;
     width: 100%;
   }
-  
+
   #QtyColumn {
     background-color: #595959;
     color: white;
     height: 2em;
     width: 100%;
   }
-  
+
   #PriceColumn {
     background-color: black;
     color: white;
@@ -202,7 +202,7 @@
     height: 2em;
     width: 100%;
   }
-  
+
   #ButtonsColumn {
     align-items: center;
     display: flex;
@@ -212,17 +212,17 @@
 
   #BuyButton {
     align-items: center;
-    background-color: #4059AD;
+    background-color: #4059ad;
     display: flex;
     font-size: 26px;
     height: 1.3em;
     justify-content: center;
     width: 1.3em;
   }
-  
+
   #SellButton {
     align-items: center;
-    background-color: #6EEB83;
+    background-color: #6eeb83;
     display: flex;
     font-size: 26px;
     height: 1.3em;
@@ -236,7 +236,7 @@
     display: flex;
     justify-content: center;
   }
-  
+
   .Table tbody td {
     align-items: center;
     display: flex;
@@ -245,7 +245,7 @@
     margin: 0;
     width: 4.5em;
   }
-  
+
   .Table td button {
     border: 0;
     border-radius: 100%;
