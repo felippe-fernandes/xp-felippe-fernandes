@@ -1,4 +1,4 @@
-import { fireEvent, screen, waitFor } from "@testing-library/react";
+import { fireEvent, screen } from "@testing-library/react";
 import React from "react";
 import SuccessScren from "../components/SuccessScreen/SuccessScreen";
 import renderWithRouter from "./Utils/RenderWithRouter";
