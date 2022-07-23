@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen, } from '@testing-library/react';
 import React from 'react';
 import Wallet from '../pages/Wallet/Wallet';
 import renderWithRouter from './Utils/RenderWithRouter';
@@ -13,104 +13,49 @@ describe('Teste a página de Wallet', () => {
   it('Teste se a tabela possui todos os cabeçalhos', () => {
     renderWithRouter(<Wallet />);
 
-    const tableColumnHeader = screen.getAllByRole('tableheader');
+    const tableColumnHeader = screen.getAllByRole('columnheader');
     expect(tableColumnHeader).toHaveLength(11);
   });
-  // it('Teste se o input de password possui o placeholder Senha', () => {
-  //   renderWithRouter(<Login />);
+  it('Teste se existe uma coluna de botões em cada linha', () => {
+    renderWithRouter(<Wallet />);
 
-  //   const getPasswordInput = screen.getByRole('textbox', {
-  //     name: /password/i
-  //   });
-  //   const passwordInputPlaceholder = getPasswordInput.getAttribute('placeholder');
+    const getTableRows = screen.getAllByTestId('tableRow').length
+    const buttonColumn = screen.getAllByTestId('buttonColumn').length
+    expect(buttonColumn).toBe(getTableRows)
+  });
+  it('Teste se existem dois botões na coluna Negociar', () => {
+    renderWithRouter(<Wallet />);
 
-  //   expect(passwordInputPlaceholder).toBe('Senha');
-  // });
+    const getNumberOfRows = screen.getAllByTestId('tableRow').length
+    const buyButton = screen.getAllByTestId('buyButton')
+    const sellButton = screen.getAllByTestId('sellButton')
+    console.log(getNumberOfRows);
+    expect(buyButton && sellButton).toHaveLength(getNumberOfRows)
+  })
+  it('Teste se ao clicar em um dos botões da coluna Negotiate o Modal é aberto', () => {
+    renderWithRouter(<Wallet />)
 
-  // it('Teste se existe um botão', () => {
-  //   renderWithRouter(<Login />);
+    const getNumberOfRows = screen.getAllByTestId('tableRow').length;
+    const buyButton = screen.getAllByTestId('buyButton')
+    fireEvent.click(buyButton[Math.floor(Math.random() * getNumberOfRows)])
+    expect(document.body).toHaveClass('ReactModal__Body--open')
+  });
+  it('Teste se existe o botão de Depósito/Retirada', () => {
+    renderWithRouter(<Wallet />)
 
-  //   const button = screen.getAllByRole('button');
+    const getDepositAndWithDrawalButton = screen.getByRole('button', {
+      name: /depósito\/retirada/i
+    })
+    expect(getDepositAndWithDrawalButton).toBeInTheDocument();
+  });
+  it('Teste se ao clicar no botão de Depósito/Retirad o usuario é redirecionado para a /payment', () => {
+    const { history } = renderWithRouter(<Wallet />)
 
-  //   expect(button).toHaveLength(1);
-  // });
-  // it('Teste se o botão tem o texto Acessar', () => {
-  //   renderWithRouter(<Login />);
+    const getDepositAndWithDrawalButton = screen.getByRole('button', {
+      name: /depósito\/retirada/i
+    })
 
-  //   const accessButton = screen.getByRole('button', {
-  //     name: /acessar/i
-  //   });
-
-  //   expect(accessButton).toBeInTheDocument();
-  // });
-  // it('Teste se o botão começa desabilitado', () => {
-  //   renderWithRouter(<Login />);
-
-  //   const accessButton = screen.getByRole('button', {
-  //     name: /acessar/i
-  //   });
-
-  //   expect(accessButton).toBeDisabled();
-  // });
-  // it('Teste se o botão habilita depois de um email e uma senha válidos', () => {
-  //   renderWithRouter(<Login />);
-
-  //   const getEmailInput = screen.getByRole('textbox', {
-  //     name: /email/i
-  //   });
-  //   const getPasswordInput = screen.getByRole('textbox', {
-  //     name: /password/i
-  //   });
-  //   const accessButton = screen.getByRole('button', {
-  //     name: /acessar/i
-  //   });
-
-  //   fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } })
-  //   fireEvent.change(getPasswordInput, { target: { value: '123456' } })
-
-  //   expect(accessButton).toBeEnabled();
-  // });
-  // it('Teste se o botão continua desabilitado com um email e uma senha inválidos', () => {
-  //   renderWithRouter(<Login />);
-
-  //   const getEmailInput = screen.getByRole('textbox', {
-  //     name: /email/i
-  //   });
-  //   const getPasswordInput = screen.getByRole('textbox', {
-  //     name: /password/i
-  //   });
-  //   const accessButton = screen.getByRole('button', {
-  //     name: /acessar/i
-  //   });
-
-  //   fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc' } })
-  //   fireEvent.change(getPasswordInput, { target: { value: '123456' } })
-  //   expect(accessButton).toBeDisabled();
-
-  //   fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } })
-  //   fireEvent.change(getPasswordInput, { target: { value: '1234' } })
-  //   expect(accessButton).toBeDisabled();
-
-  //   fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc' } })
-  //   fireEvent.change(getPasswordInput, { target: { value: '1234' } })
-  //   expect(accessButton).toBeDisabled();
-  // });
-  // it('Teste se ao clicar no botão de acessar o usuario é redirecionado para a /wallet', () => {
-  //   const { history } = renderWithRouter(<Login />)
-
-  //   const getEmailInput = screen.getByRole('textbox', {
-  //     name: /email/i
-  //   });
-  //   const getPasswordInput = screen.getByRole('textbox', {
-  //     name: /password/i
-  //   });
-  //   const accessButton = screen.getByRole('button', {
-  //     name: /acessar/i
-  //   });
-
-  //   fireEvent.change(getEmailInput, { target: { value: 'teste@xpinc.com' } })
-  //   fireEvent.change(getPasswordInput, { target: { value: '123456' } })
-  //   fireEvent.click(accessButton)
-  //   expect(history.location.pathname).toBe('/wallet')
-  // });
+    fireEvent.click(getDepositAndWithDrawalButton)
+    expect(history.location.pathname).toBe('/payment')
+  });
 });

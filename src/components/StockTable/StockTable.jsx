@@ -14,8 +14,8 @@ function StockTable() {
     }
 
     const myShareTable = () => {
-        return shares.sort(alphabeticSort).filter((share) => share.qty > 0).map((share) => (
-            <tr key={share.name}>
+        return shares.sort(alphabeticSort).filter((share) => share.qty > 0).map((share, index) => (
+            <tr key={share.name} data-testid={`tableRow`}>
                 <td id={styles.NameColumn}>{share.name}</td>
                 <td id={styles.QtyColumn}>{share.qty}</td>
                 <td id={styles.PriceColumn}>{Number(share.price).toLocaleString('pt-BR', {
@@ -26,26 +26,26 @@ function StockTable() {
                     style: 'currency',
                     currency: 'BRL',
                 })}</td>
-                <td id={styles.ButtonsColumn}>
-                    <button id={styles.BuyButton} onClick={() => handleClick(share)}><FontAwesomeIcon icon={faC} /></button>
-                    <button id={styles.SellButton} onClick={() => handleClick(share)}><FontAwesomeIcon icon={faV} /></button>
+                <td id={styles.ButtonsColumn} data-testid='buttonColumn'>
+                    <button id={styles.BuyButton} data-testid='buyButton' onClick={() => handleClick(share)}><FontAwesomeIcon icon={faC} /></button>
+                    <button id={styles.SellButton} data-testid='sellButton' onClick={() => handleClick(share)}><FontAwesomeIcon icon={faV} /></button>
                 </td>
             </tr>
         ));
     };
 
     const otherSharesTable = () => {
-        return shares.sort(alphabeticSort).map((share) => (
-            <tr key={share.name}>
+        return shares.sort(alphabeticSort).map((share, index) => (
+            <tr key={share.name} data-testid={`tableRow`}>
                 <td id={styles.NameColumn}>{share.name}</td>
                 <td id={styles.QtyColumn}>{share.qtyAvailable}</td>
                 <td id={styles.PriceColumn}>{Number(share.price).toLocaleString('pt-BR', {
                     style: 'currency',
                     currency: 'BRL',
                 })}</td>
-                <td id={styles.ButtonsColumn}>
-                    <button id={styles.BuyButton} onClick={() => handleClick(share)}><FontAwesomeIcon icon={faC} /></button>
-                    <button id={styles.SellButton} onClick={() => handleClick(share)} disabled={!share.itHas}><FontAwesomeIcon icon={faV} /></button>
+                <td id={styles.ButtonsColumn} data-testid='buttonColumn'>
+                    <button id={styles.BuyButton} data-testid='buyButton' onClick={() => handleClick(share)}><FontAwesomeIcon icon={faC} /></button>
+                    <button id={styles.SellButton} data-testid='sellButton' onClick={() => handleClick(share)} disabled={!share.itHas}><FontAwesomeIcon icon={faV} /></button>
                 </td>
             </tr>
         ));

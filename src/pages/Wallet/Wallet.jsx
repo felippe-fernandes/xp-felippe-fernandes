@@ -26,7 +26,7 @@ function Wallet() {
         <Header />
         <StockTable/>
         <button className={styles.TransferButton} onClick={handleClick}>
-          <p>Deposito/Retirada</p>
+          <p>Depósito/Retirada</p>
           <FontAwesomeIcon icon={faMoneyBillTransfer} />
         </button>
         <ReactModal 
