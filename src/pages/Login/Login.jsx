@@ -33,7 +33,7 @@ function Login() {
 
   const handleKeyPres = (e) => {
     if (e.key === 'Enter') {
-      if (validateEmail(email) && password.length >= 6){
+      if (validateEmail(email) && password.length >= 6) {
         handleClick(e);
       }
     }
