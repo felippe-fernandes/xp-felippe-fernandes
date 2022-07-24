@@ -39,8 +39,11 @@
   }
 
   .Select [class$='-MenuList'] {
+    align-items: center;
     background-color: white;
     border-radius: 0.5em 0.5em;
+    display: flex;
+    height: 2em;
   }
   .Select [class$='-option'] {
     align-items: center;
@@ -48,6 +51,7 @@
     color: #7f5af0;
     display: flex;
     justify-content: center;
+    padding: 0;
   }
 
   .Select [class$='-option'] span {
