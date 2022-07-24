@@ -116,7 +116,7 @@
   }
 
   .Logo img {
-    width: 40vw;
+    width: 50vw;
     padding: 1em;
   }
 
@@ -178,7 +178,7 @@
 
   .LoginButton svg {
     font-size: 22px;
-    /* margin-left: 1em; */
+    margin-left: 1vw;
   }
 
   .LoginButton:disabled {
@@ -189,7 +189,7 @@
 
 /* Telas maiores que 1366px*/
 
-@media (min-width: 481px) {
+@media (min-width: 1367px) {
   .LoginPage {
     align-items: center;
     display: flex;

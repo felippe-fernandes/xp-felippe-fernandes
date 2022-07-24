@@ -1,3 +1,5 @@
+/* Telas menores que 480px */
+
 @media (max-width: 480px) {
   .HeaderComponent {
     align-items: center;
@@ -95,14 +97,109 @@
   }
 }
 
-@media (min-width: 481px) {
+/* Telas maiores que 480px e menores que 1366px */
+
+@media (min-width: 481px) and (max-width: 1366px) {
   .HeaderComponent {
     align-items: center;
     box-sizing: border-box;
     display: flex;
     height: 10em;
     justify-content: space-between;
-    padding: 0 3em 0 5em;
+    padding: 1em 3em 1em 5em;
+  }
+
+  .Logo {
+    align-items: center;
+    background: linear-gradient(
+      -90deg,
+      rgb(66, 30, 173) 0%,
+      rgba(127, 90, 240, 1) 100%
+    );
+    border-radius: 1em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Logo img {
+    padding: 1em;
+    width: 15vw;
+  }
+
+  .Infos {
+    align-items: flex-end;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 0.5em;
+  }
+
+  .User {
+    align-items: center;
+    border: 1px solid #fffffe;
+    border-radius: 0.5em;
+    display: flex;
+    height: 2em;
+    justify-content: center;
+  }
+
+  .BalanceDiv {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.8em;
+  }
+
+  .BalanceDiv button {
+    background-color: transparent;
+    border: 0;
+    color: #fffffe;
+    height: 2em;
+    margin-right: 1em;
+  }
+
+  .BalanceDiv button svg {
+    font-size: 20px;
+  }
+
+  .Balance {
+    align-items: center;
+    background-color: #7f5af0;
+    border: 1px solid #fffffe;
+    border-radius: 0.5em;
+    color: #fffffe;
+    display: flex;
+    font-size: 22px;
+    height: 1.5em;
+    justify-content: space-evenly;
+    width: 8em;
+  }
+
+  #blur {
+    align-items: center;
+    background-color: #7f5af0;
+    border: 1px solid #fffffe;
+    border-radius: 0.5em;
+    display: flex;
+    height: 2em;
+    justify-content: center;
+    filter: blur(4px);
+    width: 9em;
+  }
+}
+
+/* Telas maiores que 1366px */
+
+@media (min-width: 1367px) {
+  .HeaderComponent {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 10em;
+    justify-content: space-between;
+    padding: 1em 3em 1em 5em;
   }
 
   .Logo {
