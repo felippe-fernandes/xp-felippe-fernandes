@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# xp-wallet
+Boas vindas ao XP Wallet, o site onde você pode comprar e vender ações!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Objetivos:
 
-## Available Scripts
+O objetivo do projeto é facilitar a compra e venda de de ações.
 
-In the project directory, you can run:
+## Para acessar o link da aplicação e ver seu funcionamento, clique no link abaixo:
+[XP-WALLET](https://xp-felippe-fernandes.vercel.app/)
 
-### `npm start`
+Se preferir, pode instalar o projeto em sua máquina e rodá-lo localmente seguindo os passos abaixo:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Como rodar a aplicação no computador:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Seu computador precisa de Git (para versionamento do código) e Node.js & npm (para executar a aplicação). Clique nos links, caso ainda não tenha instalado algum desses:
 
-### `npm test`
+ - [ ] [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+ - [ ] [Node.js e npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Agora estamos prontos para instalar o projeto.
 
-### `npm run build`
+## Instalando a aplicação:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Primeiro, abra um novo terminal e clone o repositório utilizando o comando 
+`git clone git@github.com:felippe-fernandes/xp-wallet.git`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Em seguida, digite `cd xp-wallet` para entrar no diretório (pasta) do projeto, que acabou de ser criada.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Execute `npm install` para instalar as dependências necessárias.
 
-### `npm run eject`
+4. Execute `npm start` para rodar o site no seu LocalHost no navegador.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. O site será aberto no seu navegador de preferencia.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. Para acessar o site, você precisa colocar um e-mail válido e sua senha precisar ter mais de 6 caracteres.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+7. No cabeçalho você poderá visualizar o usuário e o seu saldo. O saldo começa borrado por questão de privacidade, mas é só clicar no ícone do olho para visualizar o saldo.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+8. Na pagina principal, você encontrara duas tabelas: uma com as ações que você possui e outra com ações disponíveis para compra.
 
-## Learn More
+9. Voce pode vender ações que você já possui ou comprar novas ações. Para fazer isso é só clicar em um dos botões da coluna `Negociar`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+10. No modal aberto para negociar você poderá ver mais informações das ações escolhidas. Para comprar ou vender só digitar a quantidade desejada nos respectivos inputs. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+LEMBRE-SE: Você não pode comprar um valor maior do que o do seu saldo e nem vender mais ações do que você possui.
 
-### Code Splitting
+11. Se tudo der certo a transação será confirmada e você pode apertar no botão `OK` para retorna a tela principal.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+12. Caso você deseje depositar ou retirar um valor do seu saldo é só clicar no botão `Depósito/Retirada`.
 
-### Analyzing the Bundle Size
+13. Para concluir o processo basta escolher se você deseja fazer um depósito ou uma retirada e digitar a quantia desejada.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+14. Se tudo der certo a transação será confirmada e você pode apertar no botão `OK` para retorna a tela principal.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+15. Caso queira sair da sua conta é só clicar no nome do seu usuário e selecionar `Logout`
