@@ -41,7 +41,7 @@ describe('Teste o componente CheckoutModal', () => {
     await accessModal();
 
     const tableColumnHeader = screen.getByRole('row', {
-      name: /ação minhas ações quantidade disponivel valor unitário/i,
+      name: /ação minhas ações quantidade disponível valor unitário/i,
     });
     expect(tableColumnHeader).toBeInTheDocument();
   });

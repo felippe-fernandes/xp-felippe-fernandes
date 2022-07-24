@@ -13,7 +13,7 @@ describe('Teste o componente Header', () => {
     jest.restoreAllMocks();
   });
 
-  it('Teste se o componente possui as duas divs de infoinformações', () => {
+  it('Teste se o componente possui as duas divs de informações', () => {
     renderWithRouter(<Header />);
     const balanceInfoHeader = screen.getByTestId('balanceInfoHeader');
     const userInfoHeader = screen.getByTestId('userInfoHeader');
@@ -39,7 +39,7 @@ describe('Teste o componente Header', () => {
     fireEvent.click(blurButton);
     expect(balanceText).toHaveTextContent(finalBalanceShowed);
   });
-  it('Teste se é possivel borrar o Balance', () => {
+  it('Teste se é possível borrar o Balance', () => {
     renderWithRouter(<Header />);
 
     const balanceInfoHeader = screen.getByTestId('balanceInfoHeader');

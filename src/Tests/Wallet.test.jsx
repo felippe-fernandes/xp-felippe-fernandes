@@ -47,7 +47,7 @@ describe('Teste a página de Wallet', () => {
     });
     expect(getDepositAndWithDrawalButton).toBeInTheDocument();
   });
-  it('Teste se ao clicar no botão de Depósito/Retirada o usuario é redirecionado para a /payment', () => {
+  it('Teste se ao clicar no botão de Depósito/Retirada o usuário é redirecionado para a /payment', () => {
     const { history } = renderWithRouter(<Wallet />);
 
     const getDepositAndWithDrawalButton = screen.getByRole('button', {

@@ -32,14 +32,14 @@ function Login() {
   };
 
   useEffect(() => {
-    const checkDisbale = () => {
+    const checkDisabled = () => {
       if (validateEmail(email) && password.length >= 6) {
         setDisabled(false);
       } else {
         setDisabled(true);
       }
     };
-    checkDisbale();
+    checkDisabled();
   }, [email, password.length]);
 
   return (

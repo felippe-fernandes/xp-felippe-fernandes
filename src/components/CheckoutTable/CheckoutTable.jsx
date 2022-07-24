@@ -12,7 +12,7 @@ function CheckoutTable() {
           <tr className={styles.TableSubHeaderRow}>
             <td className={styles.TableSubHeaderData}>Ação</td>
             <td className={styles.TableSubHeaderData}>Minhas Ações</td>
-            <td className={styles.TableSubHeaderData}>Quantidade Disponivel</td>
+            <td className={styles.TableSubHeaderData}>Quantidade Disponível</td>
             <td className={styles.TableSubHeaderData}>Valor Unitário</td>
           </tr>
           <tr>

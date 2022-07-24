@@ -129,7 +129,7 @@ describe('Teste a página de Login', () => {
     expect(spyDate).toBeCalled();
     expect(spyEmail).toBeCalled();
   });
-  it('Teste se ao clicar no botão de acessar o usuario é redirecionado para a /wallet', () => {
+  it('Teste se ao clicar no botão de acessar o usuário é redirecionado para a /wallet', () => {
     const { history } = renderWithRouter(<Login />);
 
     const getEmailInput = screen.getByRole('textbox', {

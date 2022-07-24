@@ -115,7 +115,7 @@ function StockTable() {
       <tbody>
         <tr className={styles.TableSubHeaderRow}>
           <th className={styles.TableSubHeaderData}>Ação</th>
-          <th className={styles.TableSubHeaderData}>Disponiveis</th>
+          <th className={styles.TableSubHeaderData}>Disponíveis</th>
           <th className={styles.TableSubHeaderData}>Valor Unitário</th>
           <th className={styles.TableSubHeaderData}>Negociar</th>
         </tr>
