@@ -31,6 +31,14 @@ function Login() {
     navigate('/wallet');
   };
 
+  const handleKeyPres = (e) => {
+    if (e.key === 'Enter') {
+      if (validateEmail(email) && password.length >= 6){
+        handleClick(e);
+      }
+    }
+  };
+
   useEffect(() => {
     const checkDisabled = () => {
       if (validateEmail(email) && password.length >= 6) {
@@ -66,6 +74,7 @@ function Login() {
               aria-label='password'
               type='password'
               role='textbox'
+              onKeyDown={handleKeyPres}
             />
           </InputGroup>
         </div>
