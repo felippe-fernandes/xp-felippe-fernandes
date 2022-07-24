@@ -26,30 +26,42 @@ Agora estamos prontos para instalar o projeto.
 
 2. Em seguida, digite `cd xp-wallet` para entrar no diretório (pasta) do projeto, que acabou de ser criada.
 
-3. Execute `npm install` para instalar as dependências necessárias.
+3. Execute `npm install` no terminal para instalar as dependências necessárias.
 
-4. Execute `npm start` para rodar o site no seu LocalHost no navegador.
+4. Execute `npm start` no terminal para rodar o site no seu LocalHost no navegador.
 
 5. O site será aberto no seu navegador de preferencia.
 
-6. Para acessar o site, você precisa colocar um e-mail válido e sua senha precisar ter mais de 6 caracteres.
+<hr size=100%/>
 
-7. No cabeçalho você poderá visualizar o usuário e o seu saldo. O saldo começa borrado por questão de privacidade, mas é só clicar no ícone do olho para visualizar o saldo.
+## Utilizando o site:
 
-8. Na pagina principal, você encontrara duas tabelas: uma com as ações que você possui e outra com ações disponíveis para compra.
+1. Para acessar o site, você precisa colocar um e-mail válido e sua senha precisar ter mais de 6 caracteres.
 
-9. Voce pode vender ações que você já possui ou comprar novas ações. Para fazer isso é só clicar em um dos botões da coluna `Negociar`.
+2. No cabeçalho você poderá visualizar o usuário e o seu saldo. O saldo começa borrado por questão de privacidade, mas é só clicar no ícone do olho para visualizar o saldo.
 
-10. No modal aberto para negociar você poderá ver mais informações das ações escolhidas. Para comprar ou vender só digitar a quantidade desejada nos respectivos inputs. 
+3. Na pagina principal, você encontrara duas tabelas: uma com as ações que você possui e outra com ações disponíveis para compra.
+
+4. Voce pode vender ações que você já possui ou comprar novas ações. Para fazer isso é só clicar em um dos botões da coluna `Negociar`.
+
+5. No modal aberto para negociar você poderá ver mais informações das ações escolhidas. Para comprar ou vender só digitar a quantidade desejada nos respectivos inputs. 
 
 LEMBRE-SE: Você não pode comprar um valor maior do que o do seu saldo e nem vender mais ações do que você possui.
 
-11. Se tudo der certo a transação será confirmada e você pode apertar no botão `OK` para retorna a tela principal.
+6. Se tudo der certo a transação será confirmada e você pode apertar no botão `OK` para retorna a tela principal.
 
-12. Caso você deseje depositar ou retirar um valor do seu saldo é só clicar no botão `Depósito/Retirada`.
+7. Caso você deseje depositar ou retirar um valor do seu saldo é só clicar no botão `Depósito/Retirada`.
 
-13. Para concluir o processo basta escolher se você deseja fazer um depósito ou uma retirada e digitar a quantia desejada.
+8. Para concluir o processo basta escolher se você deseja fazer um depósito ou uma retirada e digitar a quantia desejada.
 
-14. Se tudo der certo a transação será confirmada e você pode apertar no botão `OK` para retorna a tela principal.
+9. Se tudo der certo a transação será confirmada e você pode apertar no botão `OK` para retorna a tela principal.
 
-15. Caso queira sair da sua conta é só clicar no nome do seu usuário e selecionar `Logout`
+10. Caso queira sair da sua conta é só clicar no nome do seu usuário e selecionar `Logout`
+
+<hr size='100%'/>
+
+## Rodando os testes:
+
+1. Execute `npm test` no terminal para rodar todos os testes.
+
+2. Execute `npm  test 'nome-do-teste'` no terminal para rodar somente o teste desejado. Ex: `npm test login`;
