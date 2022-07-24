@@ -216,40 +216,26 @@
   }
 
   .Logo img {
-    max-height: 9vh;
-    max-width: 85vw;
     padding: 1em;
+    width: 15vw;
   }
 
   .Infos {
     align-items: flex-end;
     box-sizing: border-box;
-    color: blue;
     display: flex;
     flex-direction: column;
-    height: 6em;
     justify-content: center;
-    padding-right: 1em;
+    padding-right: 0.5em;
   }
 
   .User {
     align-items: center;
-    background-color: #7f5af0;
     border: 1px solid #fffffe;
     border-radius: 0.5em;
     display: flex;
-    height: 4em;
+    height: 2em;
     justify-content: center;
-  }
-
-  .User p {
-    color: #fffffe;
-    font-size: 20px;
-    padding: 0.4em;
-  }
-
-  .User p svg {
-    margin-right: 0.3em;
   }
 
   .BalanceDiv {
@@ -263,12 +249,12 @@
     background-color: transparent;
     border: 0;
     color: #fffffe;
-    height: 4em;
+    height: 2em;
     margin-right: 1em;
   }
 
   .BalanceDiv button svg {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .Balance {
@@ -279,9 +265,9 @@
     color: #fffffe;
     display: flex;
     font-size: 22px;
-    height: 2em;
+    height: 1.5em;
     justify-content: space-evenly;
-    width: 9em;
+    width: 8em;
   }
 
   #blur {

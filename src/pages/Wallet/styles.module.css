@@ -1,3 +1,5 @@
+/* Telas maiores que 481px e menores 1367px*/
+
 @media (max-width: 480px) {
   .WalletPage {
     display: flex;
@@ -26,19 +28,21 @@
     height: 3.5em;
     justify-content: space-evenly;
     position: fixed;
-    width: 25em;
+    width: 20em;
   }
 
   .TransferButton p {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .TransferButton svg {
-    font-size: 26px;
+    font-size: 22px;
   }
 }
 
-@media (min-width: 481px) {
+/* Telas maiores que 481px e menores 1367px*/
+
+@media (min-width: 481px) and (max-width: 1366px) {
   .WalletPage {
     display: flex;
     flex-direction: column;
@@ -47,11 +51,11 @@
 
   .Modal {
     background-color: #16161a;
-    bottom: 14vh;
-    left: 6vh;
+    bottom: 15vh;
+    left: 25vh;
     position: absolute;
-    right: 6vh;
-    top: 14vh;
+    right: 25vh;
+    top: 15vh;
   }
 
   .TransferButton {
@@ -66,14 +70,56 @@
     height: 4em;
     justify-content: space-evenly;
     position: fixed;
-    width: 40em;
+    width: 20em;
   }
 
   .TransferButton p {
-    font-size: 40px;
+    font-size: 20px;
   }
 
   .TransferButton svg {
-    font-size: 26px;
+    font-size: 20px;
+  }
+}
+
+/* Telas maiores que 1366px*/
+
+@media (min-width: 1367px) {
+  .WalletPage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .Modal {
+    background-color: #16161a;
+    bottom: 15vh;
+    left: 25vh;
+    position: absolute;
+    right: 25vh;
+    top: 15vh;
+  }
+
+  .TransferButton {
+    align-items: center;
+    align-self: center;
+    background-color: #7f5af0;
+    border: 0;
+    border-radius: 0.8em;
+    bottom: 5vh;
+    color: #fffffe;
+    display: flex;
+    height: 4em;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 20em;
+  }
+
+  .TransferButton p {
+    font-size: 20px;
+  }
+
+  .TransferButton svg {
+    font-size: 20px;
   }
 }

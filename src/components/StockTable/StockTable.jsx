@@ -98,7 +98,9 @@ function StockTable() {
           <th className={styles.TableSubHeaderData}>Minhas ações</th>
           <th className={styles.TableSubHeaderData}>Valor Unitário</th>
           <th className={styles.TableSubHeaderData}>Valor Total</th>
-          <th className={styles.TableSubHeaderData}>Negociar</th>
+          <th className={styles.TableSubHeaderData} id={styles.ButtonsHeader}>
+            Negociar
+          </th>
         </tr>
         {myShareTable()}
         <tr>
@@ -117,7 +119,9 @@ function StockTable() {
           <th className={styles.TableSubHeaderData}>Ação</th>
           <th className={styles.TableSubHeaderData}>Disponíveis</th>
           <th className={styles.TableSubHeaderData}>Valor Unitário</th>
-          <th className={styles.TableSubHeaderData}>Negociar</th>
+          <th className={styles.TableSubHeaderData} id={styles.ButtonsHeader}>
+            Negociar
+          </th>
         </tr>
         {otherSharesTable()}
       </tbody>

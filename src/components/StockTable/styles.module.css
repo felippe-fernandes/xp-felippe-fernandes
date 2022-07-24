@@ -1,3 +1,5 @@
+/* Telas menores que 481px*/
+
 @media (max-width: 480px) {
   .Table {
     border-collapse: collapse;
@@ -123,12 +125,16 @@
   }
 }
 
+/* Telas maiores que 481px*/
+
 @media (min-width: 481px) {
   .Table {
+    align-self: center;
     border-collapse: collapse;
     border-spacing: 0;
+    justify-content: center;
     text-align: center;
-    width: 100vw;
+    width: 70vw;
   }
 
   .Table thead {
@@ -139,7 +145,8 @@
   .Table thead tr {
     align-items: center;
     background-color: #72757e;
-    border: 0;
+    border-left: 1px solid #fffffe;
+    border-right: 1px solid #fffffe;
     display: flex;
     justify-content: flex-start;
     width: 100%;
@@ -154,18 +161,22 @@
 
   .Table .TableSubHeaderRow {
     background-color: #fffffe;
-    border: 0;
-    box-sizing: border-box;
+    border-left: 1px solid #fffffe;
+    border-right: 1px solid #fffffe;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
   }
 
+  .Table #ButtonsHeader {
+    width: 75%;
+  }
+
   .Table .TableSubHeaderData {
     background-color: #fffffe;
-    font-size: 25px;
-    font-weight: 450;
-    margin: 0.5em 0 0.5em 0;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0.2em 0 0.2em 0;
     width: 100%;
   }
 
@@ -206,15 +217,14 @@
   #ButtonsColumn {
     align-items: center;
     display: flex;
-    height: 2em;
-    width: 100%;
+    width: 70%;
   }
 
   #BuyButton {
     align-items: center;
     background-color: #4059ad;
     display: flex;
-    font-size: 26px;
+    font-size: 18px;
     height: 1.3em;
     justify-content: center;
     width: 1.3em;
@@ -224,7 +234,7 @@
     align-items: center;
     background-color: #6eeb83;
     display: flex;
-    font-size: 26px;
+    font-size: 18px;
     height: 1.3em;
     justify-content: center;
     width: 1.3em;
@@ -240,7 +250,7 @@
   .Table tbody td {
     align-items: center;
     display: flex;
-    font-size: 22px;
+    font-size: 18px;
     justify-content: space-evenly;
     margin: 0;
     width: 4.5em;

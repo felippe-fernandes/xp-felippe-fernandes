@@ -1,3 +1,5 @@
+/* Telas menores que 481px*/
+
 @media (max-width: 480px) {
   .CheckoutTableComponent {
     width: 100%;
@@ -75,6 +77,8 @@
   }
 }
 
+/* Telas maiores que 481px*/
+
 @media (min-width: 481px) {
   .CheckoutTableComponent {
     width: 100%;
@@ -104,10 +108,10 @@
     align-items: center;
     background-color: #fffffe;
     display: flex;
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 400;
     justify-content: center;
-    width: 7em;
+    width: 100%;
   }
 
   .Table tr {
@@ -117,7 +121,7 @@
 
   .Table tbody td {
     border: 1px solid #fffffe;
-    font-size: 24px;
+    font-size: 18px;
     overflow: hidden;
     text-align: center;
     vertical-align: middle;

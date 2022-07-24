@@ -148,13 +148,13 @@
     background-color: #7f5af0;
     border-radius: 0.5em;
     font-size: 22px;
-    height: 2em;
-    width: 18em;
+    height: 1em;
+    width: 16em;
   }
 
   .Select [class$='-control'] [class$='-indicatorContainer'] {
     color: white;
-    padding-right: 1em;
+    padding-right: 0.5em;
   }
 
   .Select [class$='-control'] [class$='-indicatorSeparator'] {
@@ -169,13 +169,13 @@
   }
 
   .Select [class$='-singleValue'] span {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .Select [class$='-singleValue'] svg {
     font-size: 22px;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
   }
 
   .Select [class$='-menu'] {
@@ -192,6 +192,7 @@
     background-color: transparent;
     color: #7f5af0;
     display: flex;
+    height: 2em;
     justify-content: center;
   }
 
