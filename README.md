@@ -32,8 +32,6 @@ Agora estamos prontos para instalar o projeto.
 
 5. O site será aberto no seu navegador de preferencia.
 
-<hr size=100%/>
-
 ## Utilizando o site:
 
 1. Para acessar o site, você precisa colocar um e-mail válido e sua senha precisar ter mais de 6 caracteres.
@@ -57,8 +55,6 @@ LEMBRE-SE: Você não pode comprar um valor maior do que o do seu saldo e nem ve
 9. Se tudo der certo a transação será confirmada e você pode apertar no botão `OK` para retorna a tela principal.
 
 10. Caso queira sair da sua conta é só clicar no nome do seu usuário e selecionar `Logout`
-
-<hr size='100%'/>
 
 ## Rodando os testes:
 
