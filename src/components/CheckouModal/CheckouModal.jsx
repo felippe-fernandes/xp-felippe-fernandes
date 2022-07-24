@@ -29,7 +29,6 @@ function CheckouModal() {
   const [transactionPossible, setTransactionPossible] = useState('nok');
   const [rightText, setRightText] = useState('Valor total da compra');
 
-
   const handleBackClick = () => {
     setShowModal(false);
   };
@@ -70,13 +69,13 @@ function CheckouModal() {
     };
     const showRightText = () => {
       if (sellQty > 0) {
-        setRightText('Valor total da venda')
+        setRightText('Valor total da venda');
       } else {
-        setRightText('Valor total da compra')
+        setRightText('Valor total da compra');
       }
-    }
+    };
     enableConfirmButton();
-    showRightText()
+    showRightText();
   }, [
     balance,
     buyQty,

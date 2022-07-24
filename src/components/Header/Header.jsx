@@ -59,7 +59,7 @@ function Header() {
       </div>
       <div className={styles.Infos} data-testid='userInfos'>
         <div data-testid='userInfoHeader' className={styles.User}>
-        <DropdownMenu />
+          <DropdownMenu />
         </div>
         <div className={styles.BalanceDiv}>
           <button onClick={handleClick}>
