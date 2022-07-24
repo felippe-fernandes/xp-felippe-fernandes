@@ -11,6 +11,10 @@
 # production
 /build
 
+# ReadMe
+*.webm
+*.mp4
+
 # misc
 .DS_Store
 .env.local
@@ -19,5 +23,3 @@
 .env.production.local
 
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*

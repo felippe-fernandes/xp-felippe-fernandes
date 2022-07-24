@@ -6,7 +6,7 @@ Boas vindas ao XP Wallet, o site onde você pode comprar e vender ações!
 O objetivo do projeto é facilitar a compra e venda de de ações.
 
 ## Para acessar o link da aplicação e ver seu funcionamento, clique no link abaixo:
-[XP-WALLET](https://xp-felippe-fernandes.vercel.app/)
+[XP-WALLET na Vercel](https://xp-felippe-fernandes.vercel.app/)
 
 Se preferir, pode instalar o projeto em sua máquina e rodá-lo localmente seguindo os passos abaixo:
 
@@ -26,9 +26,15 @@ Agora estamos prontos para instalar o projeto.
 
 2. Em seguida, digite `cd xp-wallet` para entrar no diretório (pasta) do projeto, que acabou de ser criada.
 
+![GIT Clone](./src/gifs/Aplica%C3%A7%C3%A3o/GitClone.gif)
+
 3. Execute `npm install` no terminal para instalar as dependências necessárias.
 
+![NPM Install](./src/gifs/Aplica%C3%A7%C3%A3o/NpmInstall.gif)
+
 4. Execute `npm start` no terminal para rodar o site no seu LocalHost no navegador.
+
+![NPM Start](./src/gifs/Aplica%C3%A7%C3%A3o/NpmStart.gif)
 
 5. O site será aberto no seu navegador de preferencia.
 
