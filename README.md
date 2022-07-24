@@ -78,8 +78,8 @@ LEMBRE-SE: Você não pode comprar um valor maior do que o do seu saldo e nem ve
 
 1. Execute `npm test` no terminal para rodar todos os testes.
 
-[NPM Test](./src/gifs/Testes/NpmTest.gif)
+![NPM Test](./src/gifs/Testes/NpmTest.gif)
 
 2. Execute `npm  test 'nome-do-teste'` no terminal para rodar somente o teste desejado. Ex: `npm test login`;
 
-[NPM Test Login](./src/gifs/Testes/NpmTestLogin.gif)
+![NPM Test Login](./src/gifs/Testes/NpmTestLogin.gif)
