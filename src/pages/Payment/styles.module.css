@@ -1,7 +1,5 @@
-@media (max-width: 480px) {
-  .PaymentPage {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
+.PaymentPage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }

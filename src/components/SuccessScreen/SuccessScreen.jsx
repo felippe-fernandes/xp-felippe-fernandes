@@ -18,13 +18,6 @@ function SuccessScreen() {
 
   return (
     <div data-testid='successScreen' className={styles.SuccessScreenComponent}>
-      <button
-        id={styles.ExitButton}
-        onClick={handleClick}
-        data-testid='closeModalButton'
-      >
-        <FontAwesomeIcon icon={faRectangleXmark} size='xl' />
-      </button>
       <div className={styles.SuccessScreen}>
         <h1>Processo realizado com sucesso!</h1>
         <Lottie animationData={SuccessAnimation} className={styles.Animation} />
@@ -32,6 +25,13 @@ function SuccessScreen() {
           OK
         </button>
       </div>
+      <button
+        id={styles.ExitButton}
+        onClick={handleClick}
+        data-testid='closeModalButton'
+      >
+        <FontAwesomeIcon icon={faRectangleXmark} size='xl' />
+      </button>
     </div>
   );
 }
